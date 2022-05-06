@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.culligan.it/MaterialDocumentGet/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.culligan.it/MaterialDocumentGet/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.culligan.it/MaterialDocumentGet/">
+      <xs:element name="MaterialDocumentGet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" name="LastRunDate" type="xs:string" />
+            <xs:element maxOccurs="1" name="InvoiceType" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MaterialDocumentGetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="A_MaterialDocumentItem">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" maxOccurs="unbounded" name="A_MaterialDocumentItemType">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="MaterialDocument">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" name="MaterialDocumentItem">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" name="MaterialDocumentYear">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Material" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="40" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Plant" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="GoodsMovementIsCancelled" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Batch" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsMovementType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOrder" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOrderItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsMovementRefDocType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsMovementReasonCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GLAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialDocumentItemText" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FiscalYear" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="to_MaterialDocumentHeader" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="1" name="A_MaterialDocumentHeaderType">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" name="MaterialDocument">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded" name="MaterialDocumentYear">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="CreatedByUser" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="12" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CreationTime" nillable="true" type="xs:string" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CreationDate" nillable="true" type="xs:string" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="DocumentDate" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsMovementCode" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryTransactionType" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialDocumentHeaderText" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="25" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PostingDate" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceDocument" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="16" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageLocation" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="WBSElement" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="24" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MaterialDocumentGet">
+    <wsdl:part name="parameters" element="tns:MaterialDocumentGet" />
+  </wsdl:message>
+  <wsdl:message name="MaterialDocumentGetResponse">
+    <wsdl:part name="parameters" element="tns:MaterialDocumentGetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MaterialDocumentGetSOAP">
+    <wsdl:operation name="MaterialDocumentGet">
+      <wsdl:input message="tns:MaterialDocumentGet" />
+      <wsdl:output message="tns:MaterialDocumentGetResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MaterialDocumentGetSOAP" type="tns:MaterialDocumentGetSOAP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MaterialDocumentGet">
+      <soap:operation soapAction="http://www.culligan.it/materialdocumentget" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MaterialDocumentGet">
+    <wsdl:port name="MaterialDocumentGetSOAP" binding="tns:MaterialDocumentGetSOAP">
+      <soap:address location="https://l5956-iflmap.hcisbp.us2.hana.ondemand.com/cxf/materialdocumentget" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

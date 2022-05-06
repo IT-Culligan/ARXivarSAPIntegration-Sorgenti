@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BI_STGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SFDC_Anagrafica_Clienti">
+          <Key>
+            <PropertyRef Name="AccountNumber__c" />
+          </Key>
+          <Property Name="AccountNumber" Type="varchar(max)" />
+          <Property Name="AccountNumber__c" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AccountSource" Type="varchar(max)" />
+          <Property Name="Acquisition_Channel__c" Type="varchar(max)" />
+          <Property Name="AcquisitionChannel__c" Type="varchar(max)" />
+          <Property Name="Active_Contract__c" Type="bit" />
+          <Property Name="Active_Flg__c" Type="bit" />
+          <Property Name="Address__c" Type="varchar(max)" />
+          <Property Name="AlternativeMobilePhone1__c" Type="varchar(max)" />
+          <Property Name="AlternativeMobilePhone2__c" Type="varchar(max)" />
+          <Property Name="AlternativePhone1__c" Type="varchar(max)" />
+          <Property Name="AlternativePhone2__c" Type="varchar(max)" />
+          <Property Name="AnnualRevenue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Area__c" Type="varchar(max)" />
+          <Property Name="Bank__c" Type="varchar(max)" />
+          <Property Name="Bank_Country__c" Type="varchar(max)" />
+          <Property Name="BankAccount__c" Type="varchar(max)" />
+          <Property Name="BankControlkey__c" Type="varchar(max)" />
+          <Property Name="BankCountry__c" Type="varchar(max)" />
+          <Property Name="Bill_To_Name__c" Type="varchar(max)" />
+          <Property Name="Billing_Block__c" Type="varchar(max)" />
+          <Property Name="BillingAddress" Type="varchar(max)" />
+          <Property Name="BillingCity" Type="varchar" MaxLength="100" />
+          <Property Name="BillingCountry" Type="varchar(max)" />
+          <Property Name="BillingCountryCode" Type="varchar(max)" />
+          <Property Name="BillingPostalCode" Type="varchar(max)" />
+          <Property Name="BillingState" Type="varchar(max)" />
+          <Property Name="BillingStateCode" Type="varchar(max)" />
+          <Property Name="BillingStreet" Type="varchar(max)" />
+          <Property Name="Branch__c" Type="varchar(max)" />
+          <Property Name="Branch__pc" Type="varchar(max)" />
+          <Property Name="Business_Unit__pc" Type="varchar(max)" />
+          <Property Name="CodiceMigrazioneSFDC__c" Type="varchar(max)" />
+          <Property Name="Commercial_Campaign__pc" Type="varchar(max)" />
+          <Property Name="Company__c" Type="varchar(max)" />
+          <Property Name="CompanyFiscalCode__c" Type="varchar(max)" />
+          <Property Name="CompleteDelivery__c" Type="bit" />
+          <Property Name="Contact__pc" Type="bit" />
+          <Property Name="Contact_Bill_to__pc" Type="bit" />
+          <Property Name="Contact_Ship_to__pc" Type="bit" />
+          <Property Name="ConvertedBy__c" Type="varchar(max)" />
+          <Property Name="ConvertedBy__pc" Type="varchar(max)" />
+          <Property Name="Country_Fax__pc" Type="varchar(max)" />
+          <Property Name="Country_Phone__c" Type="varchar(max)" />
+          <Property Name="Country_Phone__pc" Type="varchar(max)" />
+          <Property Name="Country_Phone_1__c" Type="varchar(max)" />
+          <Property Name="Country_Phone_2__c" Type="varchar(max)" />
+          <Property Name="CountryFax__c" Type="varchar(max)" />
+          <Property Name="CountryMobile__c" Type="varchar(max)" />
+          <Property Name="CountryMobile__pc" Type="varchar(max)" />
+          <Property Name="CountryMobile1__c" Type="varchar(max)" />
+          <Property Name="CountryMobile2__c" Type="varchar(max)" />
+          <Property Name="CreatedById" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Currency__c" Type="varchar(max)" />
+          <Property Name="Customer_Group__c" Type="varchar(max)" />
+          <Property Name="Customer_Group_1__c" Type="varchar(max)" />
+          <Property Name="Customer_Group_2__c" Type="varchar(max)" />
+          <Property Name="Customer_Pricing_Group__c" Type="varchar(max)" />
+          <Property Name="Customer_TAX_Classification__c" Type="varchar(max)" />
+          <Property Name="Customer_TAX_Type_1__c" Type="varchar(max)" />
+          <Property Name="Customer_Type__c" Type="varchar(max)" />
+          <Property Name="CustomerCode__c" Type="varchar" MaxLength="255" />
+          <Property Name="CustomerTaxCategory__c" Type="varchar(max)" />
+          <Property Name="CustomerTAXType2__c" Type="varchar(max)" />
+          <Property Name="Default_isBillTo__pc" Type="bit" />
+          <Property Name="Default_isCommercial__pc" Type="bit" />
+          <Property Name="Default_isShipTo__pc" Type="bit" />
+          <Property Name="DefaultBillToAccount__c" Type="varchar(max)" />
+          <Property Name="DefaultPayerAccount__c" Type="varchar(max)" />
+          <Property Name="DefaultShipToAccount__c" Type="varchar(max)" />
+          <Property Name="Delivery_Block__c" Type="varchar(max)" />
+          <Property Name="DeliveryPlant__c" Type="varchar(max)" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Distribution_Channel__c" Type="varchar(max)" />
+          <Property Name="Division__c" Type="varchar(max)" />
+          <Property Name="Email__c" Type="varchar(max)" />
+          <Property Name="Email_pec__c" Type="varchar(max)" />
+          <Property Name="et4ae5__HasOptedOutOfMobile__pc" Type="varchar(max)" />
+          <Property Name="et4ae5__Mobile_Country_Code__pc" Type="varchar(max)" />
+          <Property Name="Extra_Email__pc" Type="varchar(max)" />
+          <Property Name="ExtraEmail1__c" Type="varchar(max)" />
+          <Property Name="ExtraEmail2__c" Type="varchar(max)" />
+          <Property Name="Fax" Type="varchar(max)" />
+          <Property Name="FirstName" Type="varchar(max)" />
+          <Property Name="FirstName__c" Type="varchar(max)" />
+          <Property Name="Fiscal_Code__pc" Type="varchar(max)" />
+          <Property Name="FiscalCode__c" Type="varchar(max)" />
+          <Property Name="HiddenParent__c" Type="varchar(max)" />
+          <Property Name="IBAN__c" Type="varchar(max)" />
+          <Property Name="IdSfdc" Type="varchar" MaxLength="18" />
+          <Property Name="IncoLocation1__c" Type="varchar(max)" />
+          <Property Name="IncoLocation2__c" Type="varchar(max)" />
+          <Property Name="Incoming_Flow__c" Type="varchar(max)" />
+          <Property Name="IncomingFlow__c" Type="varchar(max)" />
+          <Property Name="Incoterms__c" Type="varchar(max)" />
+          <Property Name="Industry" Type="varchar(max)" />
+          <Property Name="isConverted__c" Type="bit" />
+          <Property Name="isConverted__pc" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsEmea__pc" Type="bit" />
+          <Property Name="IsPartner" Type="bit" />
+          <Property Name="IsPersonAccount" Type="bit" />
+          <Property Name="isSendedToSap__c" Type="bit" />
+          <Property Name="Key_Account__c" Type="bit" />
+          <Property Name="Key_Account_Manager__c" Type="varchar(max)" />
+          <Property Name="Language__c" Type="varchar(max)" />
+          <Property Name="Language__pc" Type="varchar(max)" />
+          <Property Name="LastActivityDate" Type="datetime" />
+          <Property Name="LastModifiedById" Type="varchar(max)" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="LastName" Type="varchar(max)" />
+          <Property Name="LastName__c" Type="varchar(max)" />
+          <Property Name="LastReferencedDate" Type="datetime" />
+          <Property Name="LastViewedDate" Type="datetime" />
+          <Property Name="Light_Marketing_Only__c" Type="bit" />
+          <Property Name="Market__c" Type="varchar(max)" />
+          <Property Name="Master_Account__c" Type="varchar(max)" />
+          <Property Name="Master_Group__c" Type="varchar(max)" />
+          <Property Name="MasterAccount__c" Type="varchar(max)" />
+          <Property Name="MasterRecordId" Type="varchar(max)" />
+          <Property Name="MiddleName" Type="varchar(max)" />
+          <Property Name="MigrationExternalKey__c" Type="varchar(max)" />
+          <Property Name="MobilePhone__c" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="NameState__c" Type="varchar(max)" />
+          <Property Name="NameState__pc" Type="varchar(max)" />
+          <Property Name="Nationality__pc" Type="varchar(max)" />
+          <Property Name="OrderCombination__c" Type="bit" />
+          <Property Name="OwnerId" Type="varchar(max)" />
+          <Property Name="Ownership" Type="varchar(max)" />
+          <Property Name="Page_Title__pc" Type="varchar(max)" />
+          <Property Name="ParentId" Type="varchar(max)" />
+          <Property Name="PaymentMethod__c" Type="varchar(max)" />
+          <Property Name="PaymentTerm__c" Type="varchar(max)" />
+          <Property Name="PersonContactId" Type="varchar(max)" />
+          <Property Name="PersonDepartment" Type="varchar(max)" />
+          <Property Name="PersonTitle" Type="varchar(max)" />
+          <Property Name="Phone" Type="varchar(max)" />
+          <Property Name="PhotoUrl" Type="varchar(max)" />
+          <Property Name="Preliminary_Activity__pc" Type="varchar(max)" />
+          <Property Name="Privacy_1__pc" Type="bit" />
+          <Property Name="Privacy_2__pc" Type="bit" />
+          <Property Name="Privacy_3__pc" Type="bit" />
+          <Property Name="Privacy_4__pc" Type="bit" />
+          <Property Name="Product_of_Interest__pc" Type="varchar(max)" />
+          <Property Name="Rating" Type="varchar(max)" />
+          <Property Name="RecordTypeId" Type="varchar(max)" />
+          <Property Name="ReferentCode__c" Type="varchar(max)" />
+          <Property Name="Referral__c" Type="varchar(max)" />
+          <Property Name="Role__pc" Type="varchar(max)" />
+          <Property Name="Sales_Organization__c" Type="varchar(max)" />
+          <Property Name="SalesOrderBlock__c" Type="varchar(max)" />
+          <Property Name="Salutation" Type="varchar(max)" />
+          <Property Name="SAP_ExternalKey__c" Type="varchar(max)" />
+          <Property Name="SAP_ExternalKey__pc" Type="varchar(max)" />
+          <Property Name="ShippingAddress" Type="varchar(max)" />
+          <Property Name="ShippingCity" Type="varchar(max)" />
+          <Property Name="ShippingCondition__c" Type="varchar(max)" />
+          <Property Name="ShippingCountry" Type="varchar(max)" />
+          <Property Name="ShippingCountryCode" Type="varchar(max)" />
+          <Property Name="ShippingGeocodeAccuracy" Type="varchar(max)" />
+          <Property Name="ShippingLatitude" Type="varchar(max)" />
+          <Property Name="ShippingLongitude" Type="varchar(max)" />
+          <Property Name="ShippingPostalCode" Type="varchar(max)" />
+          <Property Name="ShippingState" Type="varchar(max)" />
+          <Property Name="ShippingStateCode" Type="varchar(max)" />
+          <Property Name="ShippingStreet" Type="varchar(max)" />
+          <Property Name="Sic" Type="varchar(max)" />
+          <Property Name="SicDesc" Type="varchar(max)" />
+          <Property Name="Site" Type="varchar(max)" />
+          <Property Name="Site_Owner__pc" Type="varchar(max)" />
+          <Property Name="Sub_Area__c" Type="varchar(max)" />
+          <Property Name="Subscribe__pc" Type="bit" />
+          <Property Name="Supplier__c" Type="varchar(max)" />
+          <Property Name="SystemModstamp" Type="varchar(max)" />
+          <Property Name="Tax_Type__c" Type="varchar(max)" />
+          <Property Name="Test__pc" Type="varchar(max)" />
+          <Property Name="TickerSymbol" Type="varchar(max)" />
+          <Property Name="Type" Type="varchar(max)" />
+          <Property Name="Type_Of_Contact__pc" Type="varchar(max)" />
+          <Property Name="TypeOfSobject__c" Type="varchar(max)" />
+          <Property Name="VAT_Number__pc" Type="varchar(max)" />
+          <Property Name="VatNumber__c" Type="varchar(max)" />
+          <Property Name="VatNumber2__c" Type="varchar(max)" />
+          <Property Name="VatNumber3__c" Type="varchar(max)" />
+          <Property Name="VATNumberExtraEU__c" Type="varchar(max)" />
+          <Property Name="TipoCliente" Type="varchar" MaxLength="10" />
+          <Property Name="cli" Type="varchar" MaxLength="255" />
+          <Property Name="EmailBW__c" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityContainer Name="BI_STGModelStoreContainer">
+          <EntitySet Name="SFDC_Anagrafica_Clienti" EntityType="Self.SFDC_Anagrafica_Clienti" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BI_STGModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityType Name="SFDC_Anagrafica_Clienti_STG">
+          <Key>
+            <PropertyRef Name="AccountNumber__c" />
+          </Key>
+          <Property Name="AccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNumber__c" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Acquisition_Channel__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AcquisitionChannel__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Active_Contract__c" Type="Boolean" />
+          <Property Name="Active_Flg__c" Type="Boolean" />
+          <Property Name="Address__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AlternativeMobilePhone1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AlternativeMobilePhone2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AlternativePhone1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AlternativePhone2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AnnualRevenue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Area__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Bank__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Bank_Country__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BankAccount__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BankControlkey__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BankCountry__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Bill_To_Name__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Billing_Block__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BillingCountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingCountryCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingPostalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingState" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingStateCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingStreet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Branch__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Branch__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Business_Unit__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CodiceMigrazioneSFDC__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Commercial_Campaign__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Company__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyFiscalCode__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompleteDelivery__c" Type="Boolean" />
+          <Property Name="Contact__pc" Type="Boolean" />
+          <Property Name="Contact_Bill_to__pc" Type="Boolean" />
+          <Property Name="Contact_Ship_to__pc" Type="Boolean" />
+          <Property Name="ConvertedBy__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ConvertedBy__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country_Fax__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country_Phone__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country_Phone__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country_Phone_1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country_Phone_2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryFax__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryMobile__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryMobile__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryMobile1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryMobile2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedById" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Currency__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Group__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Group_1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Group_2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Pricing_Group__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_TAX_Classification__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_TAX_Type_1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Type__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCode__c" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxCategory__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTAXType2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Default_isBillTo__pc" Type="Boolean" />
+          <Property Name="Default_isCommercial__pc" Type="Boolean" />
+          <Property Name="Default_isShipTo__pc" Type="Boolean" />
+          <Property Name="DefaultBillToAccount__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultPayerAccount__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultShipToAccount__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Delivery_Block__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryPlant__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Distribution_Channel__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Division__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email_pec__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="et4ae5__HasOptedOutOfMobile__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="et4ae5__Mobile_Country_Code__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Extra_Email__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExtraEmail1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExtraEmail2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fiscal_Code__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FiscalCode__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HiddenParent__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IBAN__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IdSfdc" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="IncoLocation1__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IncoLocation2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Incoming_Flow__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IncomingFlow__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Incoterms__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isConverted__c" Type="Boolean" />
+          <Property Name="isConverted__pc" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsEmea__pc" Type="Boolean" />
+          <Property Name="IsPartner" Type="Boolean" />
+          <Property Name="IsPersonAccount" Type="Boolean" />
+          <Property Name="isSendedToSap__c" Type="Boolean" />
+          <Property Name="Key_Account__c" Type="Boolean" />
+          <Property Name="Key_Account_Manager__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Language__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Language__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedById" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastName__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastReferencedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastViewedDate" Type="DateTime" Precision="3" />
+          <Property Name="Light_Marketing_Only__c" Type="Boolean" />
+          <Property Name="Market__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Master_Account__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Master_Group__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MasterAccount__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MasterRecordId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MigrationExternalKey__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MobilePhone__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NameState__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NameState__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Nationality__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCombination__c" Type="Boolean" />
+          <Property Name="OwnerId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ownership" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Page_Title__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMethod__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentTerm__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PersonContactId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PersonDepartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PersonTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Preliminary_Activity__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Privacy_1__pc" Type="Boolean" />
+          <Property Name="Privacy_2__pc" Type="Boolean" />
+          <Property Name="Privacy_3__pc" Type="Boolean" />
+          <Property Name="Privacy_4__pc" Type="Boolean" />
+          <Property Name="Product_of_Interest__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RecordTypeId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReferentCode__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Referral__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Role__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sales_Organization__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalesOrderBlock__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Salutation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SAP_ExternalKey__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SAP_ExternalKey__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingCondition__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingCountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingCountryCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingGeocodeAccuracy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingLatitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingLongitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingPostalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingState" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingStateCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingStreet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SicDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Site" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Site_Owner__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sub_Area__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Subscribe__pc" Type="Boolean" />
+          <Property Name="Supplier__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SystemModstamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tax_Type__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Test__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TickerSymbol" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Type_Of_Contact__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TypeOfSobject__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VAT_Number__pc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VatNumber__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VatNumber2__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VatNumber3__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VATNumberExtraEU__c" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TipoCliente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cli" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBW__c" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BI_STGEntities">
+          <EntitySet Name="SFDC_Anagrafica_Clienti" EntityType="BI_STGModel.SFDC_Anagrafica_Clienti_STG" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BI_STGModelStoreContainer" CdmEntityContainer="BI_STGEntities">
+          <EntitySetMapping Name="SFDC_Anagrafica_Clienti">
+            <EntityTypeMapping TypeName="BI_STGModel.SFDC_Anagrafica_Clienti_STG">
+              <MappingFragment StoreEntitySet="SFDC_Anagrafica_Clienti">
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="AccountNumber__c" ColumnName="AccountNumber__c" />
+                <ScalarProperty Name="AccountSource" ColumnName="AccountSource" />
+                <ScalarProperty Name="Acquisition_Channel__c" ColumnName="Acquisition_Channel__c" />
+                <ScalarProperty Name="AcquisitionChannel__c" ColumnName="AcquisitionChannel__c" />
+                <ScalarProperty Name="Active_Contract__c" ColumnName="Active_Contract__c" />
+                <ScalarProperty Name="Active_Flg__c" ColumnName="Active_Flg__c" />
+                <ScalarProperty Name="Address__c" ColumnName="Address__c" />
+                <ScalarProperty Name="AlternativeMobilePhone1__c" ColumnName="AlternativeMobilePhone1__c" />
+                <ScalarProperty Name="AlternativeMobilePhone2__c" ColumnName="AlternativeMobilePhone2__c" />
+                <ScalarProperty Name="AlternativePhone1__c" ColumnName="AlternativePhone1__c" />
+                <ScalarProperty Name="AlternativePhone2__c" ColumnName="AlternativePhone2__c" />
+                <ScalarProperty Name="AnnualRevenue" ColumnName="AnnualRevenue" />
+                <ScalarProperty Name="Area__c" ColumnName="Area__c" />
+                <ScalarProperty Name="Bank__c" ColumnName="Bank__c" />
+                <ScalarProperty Name="Bank_Country__c" ColumnName="Bank_Country__c" />
+                <ScalarProperty Name="BankAccount__c" ColumnName="BankAccount__c" />
+                <ScalarProperty Name="BankControlkey__c" ColumnName="BankControlkey__c" />
+                <ScalarProperty Name="BankCountry__c" ColumnName="BankCountry__c" />
+                <ScalarProperty Name="Bill_To_Name__c" ColumnName="Bill_To_Name__c" />
+                <ScalarProperty Name="Billing_Block__c" ColumnName="Billing_Block__c" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
+                <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
+                <ScalarProperty Name="BillingCountryCode" ColumnName="BillingCountryCode" />
+                <ScalarProperty Name="BillingPostalCode" ColumnName="BillingPostalCode" />
+                <ScalarProperty Name="BillingState" ColumnName="BillingState" />
+                <ScalarProperty Name="BillingStateCode" ColumnName="BillingStateCode" />
+                <ScalarProperty Name="BillingStreet" ColumnName="BillingStreet" />
+                <ScalarProperty Name="Branch__c" ColumnName="Branch__c" />
+                <ScalarProperty Name="Branch__pc" ColumnName="Branch__pc" />
+                <ScalarProperty Name="Business_Unit__pc" ColumnName="Business_Unit__pc" />
+                <ScalarProperty Name="CodiceMigrazioneSFDC__c" ColumnName="CodiceMigrazioneSFDC__c" />
+                <ScalarProperty Name="Commercial_Campaign__pc" ColumnName="Commercial_Campaign__pc" />
+                <ScalarProperty Name="Company__c" ColumnName="Company__c" />
+                <ScalarProperty Name="CompanyFiscalCode__c" ColumnName="CompanyFiscalCode__c" />
+                <ScalarProperty Name="CompleteDelivery__c" ColumnName="CompleteDelivery__c" />
+                <ScalarProperty Name="Contact__pc" ColumnName="Contact__pc" />
+                <ScalarProperty Name="Contact_Bill_to__pc" ColumnName="Contact_Bill_to__pc" />
+                <ScalarProperty Name="Contact_Ship_to__pc" ColumnName="Contact_Ship_to__pc" />
+                <ScalarProperty Name="ConvertedBy__c" ColumnName="ConvertedBy__c" />
+                <ScalarProperty Name="ConvertedBy__pc" ColumnName="ConvertedBy__pc" />
+                <ScalarProperty Name="Country_Fax__pc" ColumnName="Country_Fax__pc" />
+                <ScalarProperty Name="Country_Phone__c" ColumnName="Country_Phone__c" />
+                <ScalarProperty Name="Country_Phone__pc" ColumnName="Country_Phone__pc" />
+                <ScalarProperty Name="Country_Phone_1__c" ColumnName="Country_Phone_1__c" />
+                <ScalarProperty Name="Country_Phone_2__c" ColumnName="Country_Phone_2__c" />
+                <ScalarProperty Name="CountryFax__c" ColumnName="CountryFax__c" />
+                <ScalarProperty Name="CountryMobile__c" ColumnName="CountryMobile__c" />
+                <ScalarProperty Name="CountryMobile__pc" ColumnName="CountryMobile__pc" />
+                <ScalarProperty Name="CountryMobile1__c" ColumnName="CountryMobile1__c" />
+                <ScalarProperty Name="CountryMobile2__c" ColumnName="CountryMobile2__c" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Currency__c" ColumnName="Currency__c" />
+                <ScalarProperty Name="Customer_Group__c" ColumnName="Customer_Group__c" />
+                <ScalarProperty Name="Customer_Group_1__c" ColumnName="Customer_Group_1__c" />
+                <ScalarProperty Name="Customer_Group_2__c" ColumnName="Customer_Group_2__c" />
+                <ScalarProperty Name="Customer_Pricing_Group__c" ColumnName="Customer_Pricing_Group__c" />
+                <ScalarProperty Name="Customer_TAX_Classification__c" ColumnName="Customer_TAX_Classification__c" />
+                <ScalarProperty Name="Customer_TAX_Type_1__c" ColumnName="Customer_TAX_Type_1__c" />
+                <ScalarProperty Name="Customer_Type__c" ColumnName="Customer_Type__c" />
+                <ScalarProperty Name="CustomerCode__c" ColumnName="CustomerCode__c" />
+                <ScalarProperty Name="CustomerTaxCategory__c" ColumnName="CustomerTaxCategory__c" />
+                <ScalarProperty Name="CustomerTAXType2__c" ColumnName="CustomerTAXType2__c" />
+                <ScalarProperty Name="Default_isBillTo__pc" ColumnName="Default_isBillTo__pc" />
+                <ScalarProperty Name="Default_isCommercial__pc" ColumnName="Default_isCommercial__pc" />
+                <ScalarProperty Name="Default_isShipTo__pc" ColumnName="Default_isShipTo__pc" />
+                <ScalarProperty Name="DefaultBillToAccount__c" ColumnName="DefaultBillToAccount__c" />
+                <ScalarProperty Name="DefaultPayerAccount__c" ColumnName="DefaultPayerAccount__c" />
+                <ScalarProperty Name="DefaultShipToAccount__c" ColumnName="DefaultShipToAccount__c" />
+                <ScalarProperty Name="Delivery_Block__c" ColumnName="Delivery_Block__c" />
+                <ScalarProperty Name="DeliveryPlant__c" ColumnName="DeliveryPlant__c" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Distribution_Channel__c" ColumnName="Distribution_Channel__c" />
+                <ScalarProperty Name="Division__c" ColumnName="Division__c" />
+                <ScalarProperty Name="Email__c" ColumnName="Email__c" />
+                <ScalarProperty Name="Email_pec__c" ColumnName="Email_pec__c" />
+                <ScalarProperty Name="et4ae5__HasOptedOutOfMobile__pc" ColumnName="et4ae5__HasOptedOutOfMobile__pc" />
+                <ScalarProperty Name="et4ae5__Mobile_Country_Code__pc" ColumnName="et4ae5__Mobile_Country_Code__pc" />
+                <ScalarProperty Name="Extra_Email__pc" ColumnName="Extra_Email__pc" />
+                <ScalarProperty Name="ExtraEmail1__c" ColumnName="ExtraEmail1__c" />
+                <ScalarProperty Name="ExtraEmail2__c" ColumnName="ExtraEmail2__c" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="FirstName__c" ColumnName="FirstName__c" />
+                <ScalarProperty Name="Fiscal_Code__pc" ColumnName="Fiscal_Code__pc" />
+                <ScalarProperty Name="FiscalCode__c" ColumnName="FiscalCode__c" />
+                <ScalarProperty Name="HiddenParent__c" ColumnName="HiddenParent__c" />
+                <ScalarProperty Name="IBAN__c" ColumnName="IBAN__c" />
+                <ScalarProperty Name="IdSfdc" ColumnName="IdSfdc" />
+                <ScalarProperty Name="IncoLocation1__c" ColumnName="IncoLocation1__c" />
+                <ScalarProperty Name="IncoLocation2__c" ColumnName="IncoLocation2__c" />
+                <ScalarProperty Name="Incoming_Flow__c" ColumnName="Incoming_Flow__c" />
+                <ScalarProperty Name="IncomingFlow__c" ColumnName="IncomingFlow__c" />
+                <ScalarProperty Name="Incoterms__c" ColumnName="Incoterms__c" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="isConverted__c" ColumnName="isConverted__c" />
+                <ScalarProperty Name="isConverted__pc" ColumnName="isConverted__pc" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsEmea__pc" ColumnName="IsEmea__pc" />
+                <ScalarProperty Name="IsPartner" ColumnName="IsPartner" />
+                <ScalarProperty Name="IsPersonAccount" ColumnName="IsPersonAccount" />
+                <ScalarProperty Name="isSendedToSap__c" ColumnName="isSendedToSap__c" />
+                <ScalarProperty Name="Key_Account__c" ColumnName="Key_Account__c" />
+                <ScalarProperty Name="Key_Account_Manager__c" ColumnName="Key_Account_Manager__c" />
+                <ScalarProperty Name="Language__c" ColumnName="Language__c" />
+                <ScalarProperty Name="Language__pc" ColumnName="Language__pc" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="LastModifiedById" ColumnName="LastModifiedById" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="LastName__c" ColumnName="LastName__c" />
+                <ScalarProperty Name="LastReferencedDate" ColumnName="LastReferencedDate" />
+                <ScalarProperty Name="LastViewedDate" ColumnName="LastViewedDate" />
+                <ScalarProperty Name="Light_Marketing_Only__c" ColumnName="Light_Marketing_Only__c" />
+                <ScalarProperty Name="Market__c" ColumnName="Market__c" />
+                <ScalarProperty Name="Master_Account__c" ColumnName="Master_Account__c" />
+                <ScalarProperty Name="Master_Group__c" ColumnName="Master_Group__c" />
+                <ScalarProperty Name="MasterAccount__c" ColumnName="MasterAccount__c" />
+                <ScalarProperty Name="MasterRecordId" ColumnName="MasterRecordId" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="MigrationExternalKey__c" ColumnName="MigrationExternalKey__c" />
+                <ScalarProperty Name="MobilePhone__c" ColumnName="MobilePhone__c" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameState__c" ColumnName="NameState__c" />
+                <ScalarProperty Name="NameState__pc" ColumnName="NameState__pc" />
+                <ScalarProperty Name="Nationality__pc" ColumnName="Nationality__pc" />
+                <ScalarProperty Name="OrderCombination__c" ColumnName="OrderCombination__c" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="Ownership" ColumnName="Ownership" />
+                <ScalarProperty Name="Page_Title__pc" ColumnName="Page_Title__pc" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="PaymentMethod__c" ColumnName="PaymentMethod__c" />
+                <ScalarProperty Name="PaymentTerm__c" ColumnName="PaymentTerm__c" />
+                <ScalarProperty Name="PersonContactId" ColumnName="PersonContactId" />
+                <ScalarProperty Name="PersonDepartment" ColumnName="PersonDepartment" />
+                <ScalarProperty Name="PersonTitle" ColumnName="PersonTitle" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+                <ScalarProperty Name="Preliminary_Activity__pc" ColumnName="Preliminary_Activity__pc" />
+                <ScalarProperty Name="Privacy_1__pc" ColumnName="Privacy_1__pc" />
+                <ScalarProperty Name="Privacy_2__pc" ColumnName="Privacy_2__pc" />
+                <ScalarProperty Name="Privacy_3__pc" ColumnName="Privacy_3__pc" />
+                <ScalarProperty Name="Privacy_4__pc" ColumnName="Privacy_4__pc" />
+                <ScalarProperty Name="Product_of_Interest__pc" ColumnName="Product_of_Interest__pc" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="RecordTypeId" ColumnName="RecordTypeId" />
+                <ScalarProperty Name="ReferentCode__c" ColumnName="ReferentCode__c" />
+                <ScalarProperty Name="Referral__c" ColumnName="Referral__c" />
+                <ScalarProperty Name="Role__pc" ColumnName="Role__pc" />
+                <ScalarProperty Name="Sales_Organization__c" ColumnName="Sales_Organization__c" />
+                <ScalarProperty Name="SalesOrderBlock__c" ColumnName="SalesOrderBlock__c" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="SAP_ExternalKey__c" ColumnName="SAP_ExternalKey__c" />
+                <ScalarProperty Name="SAP_ExternalKey__pc" ColumnName="SAP_ExternalKey__pc" />
+                <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
+                <ScalarProperty Name="ShippingCity" ColumnName="ShippingCity" />
+                <ScalarProperty Name="ShippingCondition__c" ColumnName="ShippingCondition__c" />
+                <ScalarProperty Name="ShippingCountry" ColumnName="ShippingCountry" />
+                <ScalarProperty Name="ShippingCountryCode" ColumnName="ShippingCountryCode" />
+                <ScalarProperty Name="ShippingGeocodeAccuracy" ColumnName="ShippingGeocodeAccuracy" />
+                <ScalarProperty Name="ShippingLatitude" ColumnName="ShippingLatitude" />
+                <ScalarProperty Name="ShippingLongitude" ColumnName="ShippingLongitude" />
+                <ScalarProperty Name="ShippingPostalCode" ColumnName="ShippingPostalCode" />
+                <ScalarProperty Name="ShippingState" ColumnName="ShippingState" />
+                <ScalarProperty Name="ShippingStateCode" ColumnName="ShippingStateCode" />
+                <ScalarProperty Name="ShippingStreet" ColumnName="ShippingStreet" />
+                <ScalarProperty Name="Sic" ColumnName="Sic" />
+                <ScalarProperty Name="SicDesc" ColumnName="SicDesc" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Site_Owner__pc" ColumnName="Site_Owner__pc" />
+                <ScalarProperty Name="Sub_Area__c" ColumnName="Sub_Area__c" />
+                <ScalarProperty Name="Subscribe__pc" ColumnName="Subscribe__pc" />
+                <ScalarProperty Name="Supplier__c" ColumnName="Supplier__c" />
+                <ScalarProperty Name="SystemModstamp" ColumnName="SystemModstamp" />
+                <ScalarProperty Name="Tax_Type__c" ColumnName="Tax_Type__c" />
+                <ScalarProperty Name="Test__pc" ColumnName="Test__pc" />
+                <ScalarProperty Name="TickerSymbol" ColumnName="TickerSymbol" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Type_Of_Contact__pc" ColumnName="Type_Of_Contact__pc" />
+                <ScalarProperty Name="TypeOfSobject__c" ColumnName="TypeOfSobject__c" />
+                <ScalarProperty Name="VAT_Number__pc" ColumnName="VAT_Number__pc" />
+                <ScalarProperty Name="VatNumber__c" ColumnName="VatNumber__c" />
+                <ScalarProperty Name="VatNumber2__c" ColumnName="VatNumber2__c" />
+                <ScalarProperty Name="VatNumber3__c" ColumnName="VatNumber3__c" />
+                <ScalarProperty Name="VATNumberExtraEU__c" ColumnName="VATNumberExtraEU__c" />
+                <ScalarProperty Name="TipoCliente" ColumnName="TipoCliente" />
+                <ScalarProperty Name="cli" ColumnName="cli" />
+                <ScalarProperty Name="EmailBW__c" ColumnName="EmailBW__c" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

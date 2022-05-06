@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.culligan.it/SalesOrderGet/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.culligan.it/SalesOrderGet/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.culligan.it/SalesOrderGet/">
+      <xs:element name="SalesOrderGet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" name="LastRunDate" type="xs:string" />
+            <xs:element maxOccurs="1" name="Type" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SalesOrderGetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="A_SalesOrder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" maxOccurs="unbounded" name="A_SalesOrderType">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="SalesOrder">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="RequestedDeliveryDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OverallSDDocumentRejectionSts" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DistributionChannel" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OrganizationDivision" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OverallTotalDeliveryStatus" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OverallSDProcessStatus" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AssignmentReference" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="18" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethod" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CreationDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreatedByUser" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="LastChangeDate" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="LastChangestring" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOrderByCustomer" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerPurchaseOrderType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CustomerPurchaseOrderDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerPaymentTerms" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsVersion" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsLocation2" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="70" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsLocation1" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="70" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PricingDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsTransferLocation" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="28" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsClassification" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CompleteDeliveryIsDefined" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryBlockReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="HeaderBillingBlockReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesDistrict" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOrderType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SDDocumentReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOrganization" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesGroup" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="SalesOrderDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOffice" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingCondition" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SoldToParty" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TotalCreditCheckStatus" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TotalNetAmount" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCurrency" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="to_Item" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="A_SalesOrderItemType">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" name="SalesOrder">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded" name="SalesOrderItem">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="6" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="HigherLevelItem" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="6" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOrderItemCategory" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOrderItemText" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="40" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOrderByCustomer" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="35" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Material" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="40" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialByCustomer" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="35" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PricingDate" nillable="true" type="xs:string" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="RequestedQuantity" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="RequestedQuantityUnit" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ItemGrossWeight" nillable="true" type="xs:string" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ItemNetWeight" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemWeightUnit" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ItemVolume" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemVolumeUnit" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderRelatedBillingStatus" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="NetAmount" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialGroup" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="9" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Batch" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductionPlant" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageLocation" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryGroup" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingPoint" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingType" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryPriority" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsClassification" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsTransferLocation" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="28" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsLocation1" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="70" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="IncotermsLocation2" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="70" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerPaymentTerms" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesDocumentRjcnReason" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemBillingBlockReason" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="SDProcessStatus" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryStatus" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCurrency" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="5" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="YY1_Equipment_SDI" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="YY1_TaskList_SDI" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="5" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_Partner" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_SalesOrderItemPartnerType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element maxOccurs="unbounded" name="PartnerFunction">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="2" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="SalesOrder">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="SalesOrderItem">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="6" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactPerson" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Personnel" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="8" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_PricingElement" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_SalesOrderItemPrElementType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element maxOccurs="unbounded" name="PricingProcedureCounter">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="PricingProcedureStep">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="SalesOrder">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="SalesOrderItem">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="6" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionType" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="4" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Pricingstring" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="14" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCalculationType" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionBaseValue" nillable="true" type="xs:string" />
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionRateValue" nillable="true" type="xs:string" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCurrency" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="5" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionQuantity" nillable="true" type="xs:string" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionQuantityUnit" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCategory" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionIsForStatistics" nillable="true" type="xs:boolean" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingScaleType" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsRelevantForAccrual" nillable="true" type="xs:boolean" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="CndnIsRelevantForInvoiceList" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionOrigin" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="IsGroupCondition" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionRecord" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionSequentialNumber" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxCode" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="2" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionIsForConfiguration" nillable="true" type="xs:boolean" />
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CndnRoundingOffDiffAmount" nillable="true" type="xs:string" />
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionAmount" nillable="true" type="xs:string" />
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionIsManuallyChanged" nillable="true" type="xs:boolean" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionControl" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionInactiveReason" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionClass" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="PrcgProcedureCounterForHeader" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="FactorForConditionBasisValue" nillable="true" type="xs:double" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="StructureCondition" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="1" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PeriodFactorForCndnBasisValue" nillable="true" type="xs:double" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingScaleBasis" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionScaleBasisValue" nillable="true" type="xs:string" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionScaleBasisUnit" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionScaleBasisCurrency" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="5" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CndnIsRelevantForIntcoBilling" nillable="true" type="xs:boolean" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCurrency" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="5" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="VariantCondition" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="26" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxCode" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="2" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_ScheduleLine" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_SalesOrderScheduleLineType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element maxOccurs="unbounded" name="SalesOrder">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="10" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="SalesOrderItem">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="6" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element maxOccurs="unbounded" name="ScheduleLine">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="4" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConfdOrderQtyByMatlAvailCheck" nillable="true" type="xs:string" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="DelivBlockReasonForSchedLine" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="2" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="DeliveredQtyInOrderQtyUnit" nillable="true" type="xs:string" />
+                                                <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="OpenConfdDelivQtyInOrdQtyUnit" nillable="true" type="xs:string" />
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderQuantityUnit" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="3" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="to_Partner" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="A_SalesOrderHeaderPartnerType">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" name="PartnerFunction">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded" name="SalesOrder">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactPerson" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Personnel" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="8" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="to_PricingElement" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="A_SalesOrderHeaderPrElementType">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" name="PricingProcedureCounter">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded" name="PricingProcedureStep">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded" name="SalesOrder">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionType" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Pricingstring" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="14" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCalculationType" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionBaseValue" nillable="true" type="xs:string" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionRateValue" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCurrency" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="5" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionQuantity" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionQuantityUnit" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCategory" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionIsForStatistics" nillable="true" type="xs:boolean" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingScaleType" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionOrigin" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="IsGroupCondition" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionRecord" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionSequentialNumber" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxCode" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxCode" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CndnRoundingOffDiffAmount" nillable="true" type="xs:string" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionAmount" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCurrency" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="5" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionControl" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionInactiveReason" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionClass" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="PrcgProcedureCounterForHeader" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="FactorForConditionBasisValue" nillable="true" type="xs:double" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="StructureCondition" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PeriodFactorForCndnBasisValue" nillable="true" type="xs:double" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingScaleBasis" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionScaleBasisValue" nillable="true" type="xs:string" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionScaleBasisUnit" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionScaleBasisCurrency" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="5" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CndnIsRelevantForIntcoBilling" nillable="true" type="xs:boolean" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionIsManuallyChanged" nillable="true" type="xs:boolean" />
+                                    <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ConditionIsForConfiguration" nillable="true" type="xs:boolean" />
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="VariantCondition" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="26" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SalesOrderGet">
+    <wsdl:part name="parameters" element="tns:SalesOrderGet" />
+  </wsdl:message>
+  <wsdl:message name="SalesOrderGetResponse">
+    <wsdl:part name="parameters" element="tns:SalesOrderGetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SalesOrderGetSOAP">
+    <wsdl:operation name="SalesOrderGet">
+      <wsdl:input message="tns:SalesOrderGet" />
+      <wsdl:output message="tns:SalesOrderGetResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SalesOrderGetSOAP" type="tns:SalesOrderGetSOAP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SalesOrderGet">
+      <soap:operation soapAction="http://www.culligan.it/SalesOrderGet" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SalesOrderGet">
+    <wsdl:port name="SalesOrderGetSOAP" binding="tns:SalesOrderGetSOAP">
+      <soap:address location="https://l5956-iflmap.hcisbp.us2.hana.ondemand.com/cxf/salesorderget" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

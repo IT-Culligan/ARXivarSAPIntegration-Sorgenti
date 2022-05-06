@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d114853c006c4c239efaf1222fb29663" Name="Diagram1" ZoomLevel="112">
+        <EntityTypeShape EntityType="SAP_BI_oldModel.SAP_InvoiceOLD" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAP_BI_oldModel.ARXIVAR_Fatture_Errore" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAP_BI_oldModel.SAP_Testate_Outbound_Delivery_Arxivar" Width="1.5" PointX="5.5" PointY="0.625" />
+        <EntityTypeShape EntityType="SAP_BI_oldModel.SAP_Conservazione_Import_to_Arxivar" Width="1.5" PointX="8" PointY="0.75" />
+        <EntityTypeShape EntityType="SAP_BI_oldModel.SAP_Open_Item_CE_Fornitori" Width="1.5" PointX="10.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

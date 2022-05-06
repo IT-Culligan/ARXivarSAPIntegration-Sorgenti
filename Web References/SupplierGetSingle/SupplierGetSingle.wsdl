@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.culligan.it/SupplierGetSingle/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.culligan.it/SupplierGetSingle/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.culligan.it/SupplierGetSingle/">
+      <xs:element name="SupplierGetSingle">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" name="LastRunDate" type="xs:string" />
+            <xs:element maxOccurs="1" name="cdForni" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SupplierGetSingleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="A_BusinessPartner">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" maxOccurs="unbounded" name="A_BusinessPartnerType">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessPartnerFullName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="81" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessPartnerName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="81" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CreationDate" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="LastChangeDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="to_BusinessPartnerAddress" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="A_BusinessPartnerAddressType">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="CityCode" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="12" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="CityName" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="40" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="District" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="40" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="FullName" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="80" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="StreetName" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="60" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="PostalCode" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_EmailAddress" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_AddressEmailAddressType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAddress" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="241" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_FaxNumber" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_AddressFaxNumberType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="FaxNumber" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="30" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_MobilePhoneNumber" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_AddressPhoneNumberType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="30" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="to_PhoneNumber" nillable="true">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" maxOccurs="unbounded" name="A_AddressPhoneNumberType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true">
+                                                  <xs:simpleType>
+                                                    <xs:restriction xmlns="" base="xs:string">
+                                                      <xs:maxLength value="30" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="to_BusinessPartnerTax" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="A_BusinessPartnerTaxNumberType">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" name="BPTaxType">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="BPTaxNumber" nillable="true">
+                                      <xs:simpleType>
+                                        <xs:restriction xmlns="" base="xs:string">
+                                          <xs:maxLength value="20" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SupplierGetSingle">
+    <wsdl:part name="parameters" element="tns:SupplierGetSingle" />
+  </wsdl:message>
+  <wsdl:message name="SupplierGetSingleResponse">
+    <wsdl:part name="parameters" element="tns:SupplierGetSingleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SupplierGetSingleSOAP">
+    <wsdl:operation name="SupplierGetSingle">
+      <wsdl:input message="tns:SupplierGetSingle" />
+      <wsdl:output message="tns:SupplierGetSingleResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SupplierGetSingleSOAP" type="tns:SupplierGetSingleSOAP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SupplierGetSingle">
+      <soap:operation soapAction="http://www.culligan.it/SupplierGetSingle" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupplierGetSingle">
+    <wsdl:port name="SupplierGetSingleSOAP" binding="tns:SupplierGetSingleSOAP">
+      <soap:address location="https://l150056-iflmap.hcisbp.us2.hana.ondemand.com/cxf/suppliergetsingle" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

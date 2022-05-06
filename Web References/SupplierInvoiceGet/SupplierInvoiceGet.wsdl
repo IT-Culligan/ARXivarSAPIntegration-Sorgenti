@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.culligan.it/SupplierInvoiceGet/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.culligan.it/SupplierInvoiceGet/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.culligan.it/SupplierInvoiceGet/">
+      <xs:element name="SupplierInvoiceGet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" name="LastRunDate" type="xs:string" />
+            <xs:element maxOccurs="1" name="CompanyCode" type="xs:string" />
+            <xs:element maxOccurs="1" name="LastRunTime" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SupplierInvoiceGetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="A_OperationalAcctgDocItemCube">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" maxOccurs="unbounded" name="A_OperationalAcctgDocItemCubeType">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="AccountingDocument">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" name="AccountingDocumentItem">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" name="CompanyCode">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" name="FiscalYear">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyCodeName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChartOfAccounts" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentItemType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ClearingDate" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ClearingCreationDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ClearingAccountingDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsCleared" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsReversal" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FinancialAccountType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeRateType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentClass" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DebitCreditCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessAreaName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="30" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AlternativeReferenceDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="26" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="InvoiceReceiptDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Branch" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FinancialManagementArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BatchInputSession" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessTransactionType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AssignmentReference" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="18" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentItemText" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ExchangeRate" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FinancialTransactionType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CorporateGroupAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentHeaderText" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ControllingArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ControllingAreaName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CostCenter" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CostCenterName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentReferenceID" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="16" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IntercompanyTransaction" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="16" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BillingDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocCreatedByUser" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ExchangeRateDate" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CreationTime" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentCreationDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FixedAsset" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetTransactionType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AssetValueDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsMovementEntryUnit" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseUnit" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="HedgedAmount" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="IsOpenItemManaged" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsNotCashDiscountLiable" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsAutomaticallyCreated" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreditControlAreaCurrency" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AmountInPaymentCurrency" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GLAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GLAccountName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="30" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GLAccountLongName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="80" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AmountInAdditionalCurrency2" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCurrency2" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsBalanceSheetAccount" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AmountInAdditionalCurrency1" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCurrency1" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="DueCalculationBaseDate" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AmountInBalanceTransacCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscount1Days" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscount2Days" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BalanceTransactionCurrency" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscount1Percent" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscount2Percent" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="InvoiceAmountInFrgnCurrency" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscountAmount" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FixedCashDiscount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="HouseBank" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BPBankAccountInternalID" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscountBaseAmount" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AmountInTransactionCurrency" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="InvoiceAmtInCoCodeCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceReference" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceReferenceFiscalYear" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceItemReference" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FollowOnDocumentType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscountAmtInCoCodeCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="AmountInCompanyCodeCurrency" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceList" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="8" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BillOfExchangeUsage" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DunningKey" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DunningBlockingReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyCodeCurrency" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DunningLevel" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DunningArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BudgetPeriod" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscount2DueDate" nillable="true" type="xs:string" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CashDiscount1DueDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentTypeName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountAssignmentNumber" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsCompletelyDelivered" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="DocumentDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentCategoryName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="60" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryValuationType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentCategory" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DelivOfGoodsDestCountry" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FiscalPeriod" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountingDocumentItemRef" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CostElement" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="HouseBankAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ClearingDocFiscalYear" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FundedProgram" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="24" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="CustomerIsInExecution" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetContract" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="13" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CashFlowType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FunctionalAreaName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="30" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FunctionalArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="16" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="GrantID" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CommitmentItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="24" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CostObject" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessProcess" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountsReceivableIsPledged" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CostCtrActivityType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessPlace" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ClearingItem" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="HasPaymentOrder" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsEUTriangularDeal" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CostOriginGroup" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyCodeCurrencyDetnMethod" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ClearingIsReversed" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DataExchangeInstruction4" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="AlternativeGLAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FundsCenter" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="16" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Fund" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DataExchangeInstruction3" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsReversed" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DataExchangeInstruction2" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsNegativePosting" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DataExchangeInstruction1" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreditControlArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PlannedAmtInTransactionCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentCardPaymentSettlement" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentCardItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="LatePaymentReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerProfitCenter" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerBusinessArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="LedgerGroup" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="JointVentureEquityType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Ledger" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="LogicalSystem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerCompany" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderID" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="LastChangeDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderIntBillOfOperationsItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="8" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderInternalBillOfOperations" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="MasterFixedAsset" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="NumberOfItems" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="MaterialPriceUnitQty" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsSalesRelated" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="LineItemDisplayIsEnabled" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="JointVentureEquityGroup" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="JointVentureCostRecoveryCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="LedgerGLLineItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="IsUsedInPaymentTransaction" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationalGLAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerSegment" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerFunctionalArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="16" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="JointVenture" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="NetPaymentDays" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="NetPaymentAmount" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentBlockingReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OriginalReferenceDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="OriginalTaxBaseAmount" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="LastDunningDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerBudgetPeriod" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Material" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="40" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerGrant" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerFund" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialPriceControl" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OffsettingAccountType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="OffsettingAccount" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="NetDueDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonnelNumber" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="8" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Plant" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodSupplement" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentReference" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="30" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PlannedReversalDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PlanningLevel" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentCurrency" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentDifferenceReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentTerms" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethod" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="SettlementReferenceDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Reference1IDByBusinessPartner" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PostingKey" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchasingDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchasingDocumentItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PostingDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfitabilitySegment" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="RecurringAccountingDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="24" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectNetwork" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="RealEstateObject" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="40" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="PurchaseOrderQty" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchasingDocumentPriceUnit" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="QuantityInEntryUnit" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="40" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="Quantity" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfitLossAccountType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfitCenterName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfitCenter" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ReverseDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplyingCountry" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialGLAccountAssignment" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="18" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesDocumentCondition" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Reference2IDByBusinessPartner" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplierName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="80" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialGLCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialGLTransactionType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SegmentName" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Segment" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="StateCentralBankPaymentReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SEPAMandate" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceDocumentType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Reference2InDocumentHeader" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Reference3IDByBusinessPartner" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Reference1InDocumentHeader" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ReversalReason" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceCompanyCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ReversalIsPlanned" nillable="true" type="xs:boolean" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleLine" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ReverseDocumentFiscalYear" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesDocumentItem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesDocument" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceDocumentLogicalSystem" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxExchangeRate" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="WBSElementInternalID" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="8" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxDistributionCode2" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxBaseAmountInCoCodeCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxSection" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ValuationArea" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCurrency" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ValueDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionTypeDetermination" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxAmount" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxDistributionCode3" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxIsCalculatedAutomatically" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxBaseAmountIsNetAmount" nillable="true" type="xs:boolean" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxAmountInCoCodeCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxDeterminationDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxBaseAmountInTransCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ValuationDiffAmtInAddlCrcy1" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ValuationDiffAmtInAddlCrcy2" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxDistributionCode1" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxJurisdiction" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="15" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TreasuryContractType" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="ValuationDiffAmtInCoCodeCrcy" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="TaxReportingDate" nillable="true" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="VATRegistration" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxAmount" nillable="true" type="xs:decimal" />
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxBaseAmount" nillable="true" type="xs:decimal" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxCertificate" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxCode" nillable="true">
+                          <xs:simpleType>
+                            <xs:restriction xmlns="" base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element xmlns="" minOccurs="0" maxOccurs="unbounded" name="WithholdingTaxExemptionAmt" nillable="true" type="xs:decimal" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SupplierInvoiceGet">
+    <wsdl:part name="parameters" element="tns:SupplierInvoiceGet" />
+  </wsdl:message>
+  <wsdl:message name="SupplierInvoiceGetResponse">
+    <wsdl:part name="parameters" element="tns:SupplierInvoiceGetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SupplierInvoiceGetSOAP">
+    <wsdl:operation name="SupplierInvoiceGet">
+      <wsdl:input message="tns:SupplierInvoiceGet" />
+      <wsdl:output message="tns:SupplierInvoiceGetResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SupplierInvoiceGetSOAP" type="tns:SupplierInvoiceGetSOAP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SupplierInvoiceGet">
+      <soap:operation soapAction="http://www.culligan.it/SupplierInvoiceGet" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupplierInvoiceGet">
+    <wsdl:port name="SupplierInvoiceGetSOAP" binding="tns:SupplierInvoiceGetSOAP">
+      <soap:address location="https://l5956-iflmap.hcisbp.us2.hana.ondemand.com/cxf/supplierinvoiceget" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

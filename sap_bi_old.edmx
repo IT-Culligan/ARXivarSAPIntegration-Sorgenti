@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SAP_BI_oldModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ARXIVAR_Fatture_Errore">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillingDocument" Type="varchar" MaxLength="50" />
+          <Property Name="AccountingDocument" Type="varchar" MaxLength="50" />
+          <Property Name="Errore" Type="varchar(max)" />
+          <Property Name="Cliente" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SAP_Conservazione_Import_to_Arxivar">
+          <Key>
+            <PropertyRef Name="AccountingDocument" />
+          </Key>
+          <Property Name="Company" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccountingDocument" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PostingDate" Type="float" />
+          <Property Name="AccountingDocumentType" Type="nvarchar" MaxLength="255" />
+          <Property Name="Author" Type="nvarchar" MaxLength="255" />
+          <Property Name="Riferimento" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreationDate" Type="float" />
+          <Property Name="Amount" Type="float" />
+        </EntityType>
+        <EntityType Name="SAP_Invoice">
+          <Key>
+            <PropertyRef Name="BillingDocument" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillingDocument" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IncotermsLocation2" Type="varchar" MaxLength="50" />
+          <Property Name="BillingDocumentCategory" Type="varchar" MaxLength="50" />
+          <Property Name="BillingDocumentType" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="CreationTime" Type="datetime" />
+          <Property Name="BillingDocumentListDate" Type="datetime" />
+          <Property Name="BillingDocumentListType" Type="varchar" MaxLength="50" />
+          <Property Name="BillingIssueType" Type="varchar" MaxLength="50" />
+          <Property Name="AccountingTransferStatus" Type="varchar" MaxLength="50" />
+          <Property Name="DistributionChannel" Type="varchar" MaxLength="50" />
+          <Property Name="Division" Type="varchar" MaxLength="50" />
+          <Property Name="BillingDocumentDate" Type="datetime" />
+          <Property Name="BillingDocumentIsCancelled" Type="bit" />
+          <Property Name="CancelledBillingDocument" Type="varchar" MaxLength="50" />
+          <Property Name="ForeignTrade" Type="varchar" MaxLength="50" />
+          <Property Name="AccountingPostingStatus" Type="varchar" MaxLength="50" />
+          <Property Name="BillingDocCombinationCriteria" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRebateAgreement" Type="varchar" MaxLength="50" />
+          <Property Name="CreditControlArea" Type="varchar" MaxLength="50" />
+          <Property Name="County" Type="varchar" MaxLength="50" />
+          <Property Name="CityCode" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerGroup" Type="varchar" MaxLength="50" />
+          <Property Name="DunningKey" Type="varchar" MaxLength="50" />
+          <Property Name="DunningBlockingReason" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerPriceGroup" Type="varchar" MaxLength="50" />
+          <Property Name="DunningArea" Type="varchar" MaxLength="50" />
+          <Property Name="AssignmentReference" Type="varchar" MaxLength="50" />
+          <Property Name="DocumentReferenceID" Type="varchar" MaxLength="50" />
+          <Property Name="ExchangeRateType" Type="varchar" MaxLength="50" />
+          <Property Name="ExchangeRateDate" Type="datetime" />
+          <Property Name="HierarchyTypePricing" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification1" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification2" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification3" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification4" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification5" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification6" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification7" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification8" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerTaxClassification9" Type="varchar" MaxLength="50" />
+          <Property Name="AcctgExchangeRateIsIndrctQtan" Type="bit" />
+          <Property Name="AbsltAccountingExchangeRate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AccountingExchangeRateIsSet" Type="bit" />
+          <Property Name="CustomerAccountAssignmentGroup" Type="varchar" MaxLength="50" />
+          <Property Name="IncotermsClassification" Type="varchar" MaxLength="50" />
+          <Property Name="AccountingDocument" Type="varchar" MaxLength="50" />
+          <Property Name="IncotermsLocation1" Type="varchar" MaxLength="70" />
+          <Property Name="FiscalYear" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyCode" Type="varchar" MaxLength="50" />
+          <Property Name="ContractAccount" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerPaymentTerms" Type="varchar" MaxLength="50" />
+          <Property Name="AdditionalValueDays" Type="varchar" MaxLength="50" />
+          <Property Name="FixedValueDate" Type="datetime" />
+          <Property Name="StatisticsCurrency" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentReference" Type="varchar" MaxLength="50" />
+          <Property Name="LastChangeDate" Type="datetime" />
+          <Property Name="PayerParty" Type="varchar" MaxLength="50" />
+          <Property Name="LastChangeDateTime" Type="datetime" />
+          <Property Name="IncotermsTransferLocation" Type="varchar" MaxLength="50" />
+          <Property Name="IncotermsVersion" Type="varchar" MaxLength="50" />
+          <Property Name="OverallPricingIncompletionSts" Type="varchar" MaxLength="50" />
+          <Property Name="OvrlItmGeneralIncompletionSts" Type="varchar" MaxLength="50" />
+          <Property Name="IsEUTriangularDeal" Type="bit" />
+          <Property Name="InvoiceListStatus" Type="varchar" MaxLength="50" />
+          <Property Name="LogicalSystem" Type="varchar" MaxLength="50" />
+          <Property Name="IsExportDelivery" Type="varchar" MaxLength="50" />
+          <Property Name="OverallBillingStatus" Type="varchar" MaxLength="50" />
+          <Property Name="OverallSDProcessStatus" Type="varchar" MaxLength="50" />
+          <Property Name="ManualInvoiceMaintIsRelevant" Type="bit" />
+          <Property Name="IsIntrastatReportingRelevant" Type="bit" />
+          <Property Name="InternalFinancialDocument" Type="varchar" MaxLength="50" />
+          <Property Name="IsRelevantForAccrual" Type="bit" />
+          <Property Name="IsIntrastatReportingExcluded" Type="bit" />
+          <Property Name="PartnerCompany" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+          <Property Name="VATRegistration" Type="varchar" MaxLength="50" />
+          <Property Name="PurchaseOrderByCustomer" Type="varchar" MaxLength="50" />
+          <Property Name="PriceListType" Type="varchar" MaxLength="50" />
+          <Property Name="SalesOrganization" Type="varchar" MaxLength="50" />
+          <Property Name="SalesDistrict" Type="varchar" MaxLength="50" />
+          <Property Name="SEPAMandate" Type="varchar" MaxLength="50" />
+          <Property Name="SDDocumentCategory" Type="varchar" MaxLength="50" />
+          <Property Name="SDPricingProcedure" Type="varchar" MaxLength="50" />
+          <Property Name="Region" Type="varchar" MaxLength="50" />
+          <Property Name="TotalGrossAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalNetAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoldToParty" Type="varchar" MaxLength="50" />
+          <Property Name="SalesDocumentCondition" Type="varchar" MaxLength="50" />
+          <Property Name="TaxAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ShippingCondition" Type="varchar" MaxLength="50" />
+          <Property Name="TaxDepartureCountry" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionCurrency" Type="varchar" MaxLength="50" />
+          <Property Name="VATRegistrationCountry" Type="varchar" MaxLength="50" />
+          <Property Name="VATRegistrationOrigin" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SAP_BI_old.dbo.SAP_Open_Item_CE_Fornitori' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SAP_Open_Item_CE_Fornitori">
+          <Key>
+            <PropertyRef Name="AccountingDocument" />
+            <PropertyRef Name="AccountingDocumentItem" />
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="FiscalYear" />
+          </Key>
+          <Property Name="AccountingDocument" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AccountingDocumentItem" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CompanyCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FiscalYear" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CompanyCodeName" Type="varchar(max)" />
+          <Property Name="AccountingDocumentItemType" Type="varchar(max)" />
+          <Property Name="ClearingDate" Type="datetime" />
+          <Property Name="ClearingCreationDate" Type="datetime" />
+          <Property Name="ClearingAccountingDocument" Type="varchar(max)" />
+          <Property Name="DebitCreditCode" Type="varchar(max)" />
+          <Property Name="BusinessArea" Type="varchar(max)" />
+          <Property Name="Branch" Type="varchar(max)" />
+          <Property Name="BusinessTransactionType" Type="varchar(max)" />
+          <Property Name="AssignmentReference" Type="varchar(max)" />
+          <Property Name="DocumentItemText" Type="varchar(max)" />
+          <Property Name="DocumentReferenceID" Type="varchar(max)" />
+          <Property Name="BillingDocument" Type="varchar(max)" />
+          <Property Name="AccountingDocCreatedByUser" Type="varchar(max)" />
+          <Property Name="AccountingDocumentCreationDate" Type="datetime" />
+          <Property Name="Customer" Type="varchar(max)" />
+          <Property Name="CustomerName" Type="varchar(max)" />
+          <Property Name="DueCalculationBaseDate" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceReference" Type="varchar(max)" />
+          <Property Name="AmountInCompanyCodeCurrency" Type="varchar(max)" />
+          <Property Name="AccountingDocumentType" Type="varchar(max)" />
+          <Property Name="DocumentDate" Type="datetime" />
+          <Property Name="ProfitCenter" Type="varchar(max)" />
+          <Property Name="LastChangeDate" Type="datetime" />
+          <Property Name="NetDueDate" Type="datetime" />
+          <Property Name="PaymentTerms" Type="varchar(max)" />
+          <Property Name="PaymentMethod" Type="varchar(max)" />
+          <Property Name="PostingDate" Type="datetime" />
+          <Property Name="ProfitCenterName" Type="varchar(max)" />
+          <Property Name="SalesDocument" Type="varchar(max)" />
+          <Property Name="PostingKey" Type="varchar" MaxLength="50" />
+          <Property Name="SupplierName" Type="varchar(max)" />
+          <Property Name="Supplier" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="SAP_Testate_Outbound_Delivery_Arxivar">
+          <Key>
+            <PropertyRef Name="DeliveryDocument" />
+          </Key>
+          <Property Name="DeliveryDocument" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Shippinglocationtimezone" Type="varchar(max)" />
+          <Property Name="ActualDeliveryRoute" Type="varchar(max)" />
+          <Property Name="Receivinglocationtimezone" Type="varchar(max)" />
+          <Property Name="ActualGoodsMovementDate" Type="varchar(max)" />
+          <Property Name="ActualGoodsMovementTime" Type="varchar(max)" />
+          <Property Name="BillingDocumentDate" Type="varchar(max)" />
+          <Property Name="BillOfLading" Type="varchar(max)" />
+          <Property Name="CompleteDeliveryIsDefined" Type="bit" />
+          <Property Name="ConfirmationTime" Type="varchar(max)" />
+          <Property Name="CreatedByUser" Type="varchar(max)" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="CreationTime" Type="varchar(max)" />
+          <Property Name="CustomerGroup" Type="varchar(max)" />
+          <Property Name="DeliveryBlockReason" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="DeliveryDocumentBySupplier" Type="varchar(max)" />
+          <Property Name="DeliveryDocumentType" Type="varchar(max)" />
+          <Property Name="DeliveryIsInPlant" Type="bit" />
+          <Property Name="DeliveryPriority" Type="varchar(max)" />
+          <Property Name="DeliveryTime" Type="varchar(max)" />
+          <Property Name="DeliveryVersion" Type="varchar" MaxLength="50" />
+          <Property Name="DepreciationPercentage" Type="varchar(max)" />
+          <Property Name="DistrStatusByDecentralizedWrhs" Type="varchar(max)" />
+          <Property Name="DocumentDate" Type="varchar(max)" />
+          <Property Name="ExternalIdentificationType" Type="varchar(max)" />
+          <Property Name="ExternalTransportSystem" Type="varchar(max)" />
+          <Property Name="FactoryCalendarByCustomer" Type="varchar(max)" />
+          <Property Name="GoodsIssueOrReceiptSlipNumber" Type="varchar(max)" />
+          <Property Name="GoodsIssueTime" Type="varchar(max)" />
+          <Property Name="HandlingUnitInStock" Type="varchar(max)" />
+          <Property Name="HdrGeneralIncompletionStatus" Type="varchar(max)" />
+          <Property Name="HdrGoodsMvtIncompletionStatus" Type="varchar(max)" />
+          <Property Name="HeaderBillgIncompletionStatus" Type="varchar(max)" />
+          <Property Name="HeaderBillingBlockReason" Type="varchar(max)" />
+          <Property Name="HeaderDelivIncompletionStatus" Type="varchar(max)" />
+          <Property Name="HeaderGrossWeight" Type="varchar(max)" />
+          <Property Name="HeaderNetWeight" Type="varchar(max)" />
+          <Property Name="HeaderPackingIncompletionSts" Type="varchar(max)" />
+          <Property Name="HeaderPickgIncompletionStatus" Type="varchar(max)" />
+          <Property Name="HeaderVolume" Type="varchar(max)" />
+          <Property Name="HeaderVolumeUnit" Type="varchar(max)" />
+          <Property Name="HeaderWeightUnit" Type="varchar(max)" />
+          <Property Name="IncotermsClassification" Type="varchar(max)" />
+          <Property Name="IncotermsTransferLocation" Type="varchar(max)" />
+          <Property Name="IntercompanyBillingDate" Type="varchar(max)" />
+          <Property Name="InternalFinancialDocument" Type="varchar(max)" />
+          <Property Name="IsDeliveryForSingleWarehouse" Type="varchar(max)" />
+          <Property Name="IsExportDelivery" Type="varchar(max)" />
+          <Property Name="LastChangeDate" Type="varchar(max)" />
+          <Property Name="LastChangedByUser" Type="varchar(max)" />
+          <Property Name="LoadingDate" Type="varchar(max)" />
+          <Property Name="LoadingPoint" Type="varchar(max)" />
+          <Property Name="LoadingTime" Type="varchar(max)" />
+          <Property Name="MeansOfTransport" Type="varchar(max)" />
+          <Property Name="MeansOfTransportRefMaterial" Type="varchar(max)" />
+          <Property Name="MeansOfTransportType" Type="varchar(max)" />
+          <Property Name="OrderCombinationIsAllowed" Type="bit" />
+          <Property Name="OrderID" Type="varchar(max)" />
+          <Property Name="OverallDelivConfStatus" Type="varchar(max)" />
+          <Property Name="OverallDelivReltdBillgStatus" Type="varchar(max)" />
+          <Property Name="OverallGoodsMovementStatus" Type="varchar(max)" />
+          <Property Name="OverallIntcoBillingStatus" Type="varchar(max)" />
+          <Property Name="OverallPackingStatus" Type="varchar(max)" />
+          <Property Name="OverallPickingConfStatus" Type="varchar(max)" />
+          <Property Name="OverallPickingStatus" Type="varchar(max)" />
+          <Property Name="OverallProofOfDeliveryStatus" Type="varchar(max)" />
+          <Property Name="OverallSDProcessStatus" Type="varchar(max)" />
+          <Property Name="OverallWarehouseActivityStatus" Type="varchar(max)" />
+          <Property Name="OvrlItmDelivIncompletionSts" Type="varchar(max)" />
+          <Property Name="OvrlItmGdsMvtIncompletionSts" Type="varchar(max)" />
+          <Property Name="OvrlItmGeneralIncompletionSts" Type="varchar(max)" />
+          <Property Name="OvrlItmPackingIncompletionSts" Type="varchar(max)" />
+          <Property Name="OvrlItmPickingIncompletionSts" Type="varchar(max)" />
+          <Property Name="PaymentGuaranteeProcedure" Type="varchar(max)" />
+          <Property Name="PickedItemsLocation" Type="varchar(max)" />
+          <Property Name="PickingDate" Type="datetime" />
+          <Property Name="PickingTime" Type="varchar(max)" />
+          <Property Name="PlannedGoodsIssueDate" Type="varchar(max)" />
+          <Property Name="ProofOfDeliveryDate" Type="varchar(max)" />
+          <Property Name="ProposedDeliveryRoute" Type="varchar(max)" />
+          <Property Name="ReceivingPlant" Type="varchar(max)" />
+          <Property Name="RouteSchedule" Type="varchar(max)" />
+          <Property Name="SalesDistrict" Type="varchar(max)" />
+          <Property Name="SalesOffice" Type="varchar(max)" />
+          <Property Name="SalesOrganization" Type="varchar(max)" />
+          <Property Name="SDDocumentCategory" Type="varchar(max)" />
+          <Property Name="ShipmentBlockReason" Type="varchar(max)" />
+          <Property Name="ShippingCondition" Type="varchar(max)" />
+          <Property Name="ShippingPoint" Type="varchar(max)" />
+          <Property Name="ShippingType" Type="varchar(max)" />
+          <Property Name="ShipToParty" Type="varchar(max)" />
+          <Property Name="SoldToParty" Type="varchar(max)" />
+          <Property Name="SpecialProcessingCode" Type="varchar(max)" />
+          <Property Name="StatisticsCurrency" Type="varchar(max)" />
+          <Property Name="Supplier" Type="varchar(max)" />
+          <Property Name="TotalBlockStatus" Type="varchar" MaxLength="50" />
+          <Property Name="TotalCreditCheckStatus" Type="varchar(max)" />
+          <Property Name="TotalNumberOfPackage" Type="varchar(max)" />
+          <Property Name="TransactionCurrency" Type="varchar(max)" />
+          <Property Name="TransportationGroup" Type="varchar(max)" />
+          <Property Name="TransportationPlanningDate" Type="varchar(max)" />
+          <Property Name="TransportationPlanningStatus" Type="varchar(max)" />
+          <Property Name="TransportationPlanningTime" Type="varchar(max)" />
+          <Property Name="UnloadingPointName" Type="varchar(max)" />
+          <Property Name="Warehouse" Type="varchar(max)" />
+          <Property Name="WarehouseGate" Type="varchar(max)" />
+          <Property Name="WarehouseStagingArea" Type="varchar(max)" />
+          <Property Name="YY1_CausalidiTrasporto_DLH" Type="varchar(max)" />
+          <Property Name="YY1_SO_CodiceStampa_DLH" Type="varchar(max)" />
+          <Property Name="YY1_CausalidiTrasporto_DLHT" Type="varchar(max)" />
+          <Property Name="YY1_SO_CodiceStampa_DLHT" Type="varchar(max)" />
+          <Property Name="dt_ins" Type="datetime" />
+          <Property Name="Arxivar_Import_Result" Type="varchar(max)" />
+          <Property Name="Arxivar_Letto" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="SAP_BI_oldModelStoreContainer">
+          <EntitySet Name="ARXIVAR_Fatture_Errore" EntityType="Self.ARXIVAR_Fatture_Errore" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SAP_Conservazione_Import_to_Arxivar" EntityType="Self.SAP_Conservazione_Import_to_Arxivar" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SAP_Invoice" EntityType="Self.SAP_Invoice" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SAP_Testate_Outbound_Delivery_Arxivar" EntityType="Self.SAP_Testate_Outbound_Delivery_Arxivar" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SAP_Open_Item_CE_Fornitori" EntityType="Self.SAP_Open_Item_CE_Fornitori" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+[SAP_Open_Item_CE_Fornitori].[AccountingDocument] AS [AccountingDocument], 
+[SAP_Open_Item_CE_Fornitori].[AccountingDocumentItem] AS [AccountingDocumentItem], 
+[SAP_Open_Item_CE_Fornitori].[CompanyCode] AS [CompanyCode], 
+[SAP_Open_Item_CE_Fornitori].[FiscalYear] AS [FiscalYear], 
+[SAP_Open_Item_CE_Fornitori].[CompanyCodeName] AS [CompanyCodeName], 
+[SAP_Open_Item_CE_Fornitori].[AccountingDocumentItemType] AS [AccountingDocumentItemType], 
+[SAP_Open_Item_CE_Fornitori].[ClearingDate] AS [ClearingDate], 
+[SAP_Open_Item_CE_Fornitori].[ClearingCreationDate] AS [ClearingCreationDate], 
+[SAP_Open_Item_CE_Fornitori].[ClearingAccountingDocument] AS [ClearingAccountingDocument], 
+[SAP_Open_Item_CE_Fornitori].[DebitCreditCode] AS [DebitCreditCode], 
+[SAP_Open_Item_CE_Fornitori].[BusinessArea] AS [BusinessArea], 
+[SAP_Open_Item_CE_Fornitori].[Branch] AS [Branch], 
+[SAP_Open_Item_CE_Fornitori].[BusinessTransactionType] AS [BusinessTransactionType], 
+[SAP_Open_Item_CE_Fornitori].[AssignmentReference] AS [AssignmentReference], 
+[SAP_Open_Item_CE_Fornitori].[DocumentItemText] AS [DocumentItemText], 
+[SAP_Open_Item_CE_Fornitori].[DocumentReferenceID] AS [DocumentReferenceID], 
+[SAP_Open_Item_CE_Fornitori].[BillingDocument] AS [BillingDocument], 
+[SAP_Open_Item_CE_Fornitori].[AccountingDocCreatedByUser] AS [AccountingDocCreatedByUser], 
+[SAP_Open_Item_CE_Fornitori].[AccountingDocumentCreationDate] AS [AccountingDocumentCreationDate], 
+[SAP_Open_Item_CE_Fornitori].[Customer] AS [Customer], 
+[SAP_Open_Item_CE_Fornitori].[CustomerName] AS [CustomerName], 
+[SAP_Open_Item_CE_Fornitori].[DueCalculationBaseDate] AS [DueCalculationBaseDate], 
+[SAP_Open_Item_CE_Fornitori].[InvoiceReference] AS [InvoiceReference], 
+[SAP_Open_Item_CE_Fornitori].[AmountInCompanyCodeCurrency] AS [AmountInCompanyCodeCurrency], 
+[SAP_Open_Item_CE_Fornitori].[AccountingDocumentType] AS [AccountingDocumentType], 
+[SAP_Open_Item_CE_Fornitori].[DocumentDate] AS [DocumentDate], 
+[SAP_Open_Item_CE_Fornitori].[ProfitCenter] AS [ProfitCenter], 
+[SAP_Open_Item_CE_Fornitori].[LastChangeDate] AS [LastChangeDate], 
+[SAP_Open_Item_CE_Fornitori].[NetDueDate] AS [NetDueDate], 
+[SAP_Open_Item_CE_Fornitori].[PaymentTerms] AS [PaymentTerms], 
+[SAP_Open_Item_CE_Fornitori].[PaymentMethod] AS [PaymentMethod], 
+[SAP_Open_Item_CE_Fornitori].[PostingDate] AS [PostingDate], 
+[SAP_Open_Item_CE_Fornitori].[ProfitCenterName] AS [ProfitCenterName], 
+[SAP_Open_Item_CE_Fornitori].[SalesDocument] AS [SalesDocument], 
+[SAP_Open_Item_CE_Fornitori].[PostingKey] AS [PostingKey], 
+[SAP_Open_Item_CE_Fornitori].[SupplierName] AS [SupplierName], 
+[SAP_Open_Item_CE_Fornitori].[Supplier] AS [Supplier]
+FROM [dbo].[SAP_Open_Item_CE_Fornitori] AS [SAP_Open_Item_CE_Fornitori]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SAP_BI_oldModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityType Name="SAP_InvoiceOLD">
+          <Key>
+            <PropertyRef Name="BillingDocument" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="BillingDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IncotermsLocation2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreationTime" Type="DateTime" Precision="3" />
+          <Property Name="BillingDocumentListDate" Type="DateTime" Precision="3" />
+          <Property Name="BillingDocumentListType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingIssueType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingTransferStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DistributionChannel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="BillingDocumentIsCancelled" Type="Boolean" />
+          <Property Name="CancelledBillingDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ForeignTrade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingPostingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocCombinationCriteria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerRebateAgreement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreditControlArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DunningKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DunningBlockingReason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPriceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DunningArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AssignmentReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentReferenceID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExchangeRateType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExchangeRateDate" Type="DateTime" Precision="3" />
+          <Property Name="HierarchyTypePricing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTaxClassification9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AcctgExchangeRateIsIndrctQtan" Type="Boolean" />
+          <Property Name="AbsltAccountingExchangeRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AccountingExchangeRateIsSet" Type="Boolean" />
+          <Property Name="CustomerAccountAssignmentGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermsClassification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermsLocation1" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FiscalYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContractAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPaymentTerms" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdditionalValueDays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FixedValueDate" Type="DateTime" Precision="3" />
+          <Property Name="StatisticsCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangeDate" Type="DateTime" Precision="3" />
+          <Property Name="PayerParty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangeDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IncotermsTransferLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermsVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverallPricingIncompletionSts" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OvrlItmGeneralIncompletionSts" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsEUTriangularDeal" Type="Boolean" />
+          <Property Name="InvoiceListStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogicalSystem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsExportDelivery" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverallBillingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverallSDProcessStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ManualInvoiceMaintIsRelevant" Type="Boolean" />
+          <Property Name="IsIntrastatReportingRelevant" Type="Boolean" />
+          <Property Name="InternalFinancialDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsRelevantForAccrual" Type="Boolean" />
+          <Property Name="IsIntrastatReportingExcluded" Type="Boolean" />
+          <Property Name="PartnerCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VATRegistration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurchaseOrderByCustomer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PriceListType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesOrganization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesDistrict" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SEPAMandate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SDDocumentCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SDPricingProcedure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalGrossAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalNetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoldToParty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesDocumentCondition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaxAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ShippingCondition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaxDepartureCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VATRegistrationCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VATRegistrationOrigin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SAP_BI_oldEntities">
+          <EntitySet Name="SAP_InvoiceOLD" EntityType="SAP_BI_oldModel.SAP_InvoiceOLD" />
+          <EntitySet Name="ARXIVAR_Fatture_Errore" EntityType="SAP_BI_oldModel.ARXIVAR_Fatture_Errore" />
+          <EntitySet Name="SAP_Testate_Outbound_Delivery_Arxivar" EntityType="SAP_BI_oldModel.SAP_Testate_Outbound_Delivery_Arxivar" />
+          <EntitySet Name="SAP_Conservazione_Import_to_Arxivar" EntityType="SAP_BI_oldModel.SAP_Conservazione_Import_to_Arxivar" />
+          <EntitySet Name="SAP_Open_Item_CE_Fornitori" EntityType="SAP_BI_oldModel.SAP_Open_Item_CE_Fornitori" />
+        </EntityContainer>
+        <EntityType Name="ARXIVAR_Fatture_Errore">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="BillingDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Errore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SAP_Testate_Outbound_Delivery_Arxivar">
+          <Key>
+            <PropertyRef Name="DeliveryDocument" />
+          </Key>
+          <Property Name="DeliveryDocument" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shippinglocationtimezone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActualDeliveryRoute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Receivinglocationtimezone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActualGoodsMovementDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActualGoodsMovementTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillOfLading" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompleteDeliveryIsDefined" Type="Boolean" />
+          <Property Name="ConfirmationTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreationTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryBlockReason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryDocumentBySupplier" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryDocumentType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryIsInPlant" Type="Boolean" />
+          <Property Name="DeliveryPriority" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepreciationPercentage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DistrStatusByDecentralizedWrhs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExternalIdentificationType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExternalTransportSystem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FactoryCalendarByCustomer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GoodsIssueOrReceiptSlipNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GoodsIssueTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HandlingUnitInStock" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HdrGeneralIncompletionStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HdrGoodsMvtIncompletionStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderBillgIncompletionStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderBillingBlockReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderDelivIncompletionStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderGrossWeight" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderNetWeight" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderPackingIncompletionSts" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderPickgIncompletionStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderVolume" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderVolumeUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HeaderWeightUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermsClassification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermsTransferLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IntercompanyBillingDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InternalFinancialDocument" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeliveryForSingleWarehouse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsExportDelivery" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangeDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangedByUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LoadingDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LoadingPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LoadingTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MeansOfTransport" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MeansOfTransportRefMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MeansOfTransportType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCombinationIsAllowed" Type="Boolean" />
+          <Property Name="OrderID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallDelivConfStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallDelivReltdBillgStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallGoodsMovementStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallIntcoBillingStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallPackingStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallPickingConfStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallPickingStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallProofOfDeliveryStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallSDProcessStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OverallWarehouseActivityStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OvrlItmDelivIncompletionSts" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OvrlItmGdsMvtIncompletionSts" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OvrlItmGeneralIncompletionSts" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OvrlItmPackingIncompletionSts" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OvrlItmPickingIncompletionSts" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentGuaranteeProcedure" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PickedItemsLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PickingDate" Type="DateTime" Precision="3" />
+          <Property Name="PickingTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PlannedGoodsIssueDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProofOfDeliveryDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProposedDeliveryRoute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReceivingPlant" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RouteSchedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalesDistrict" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalesOffice" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalesOrganization" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SDDocumentCategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShipmentBlockReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingCondition" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ShipToParty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SoldToParty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SpecialProcessingCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StatisticsCurrency" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Supplier" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TotalBlockStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalCreditCheckStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TotalNumberOfPackage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionCurrency" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TransportationGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TransportationPlanningDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TransportationPlanningStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TransportationPlanningTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UnloadingPointName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Warehouse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WarehouseGate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WarehouseStagingArea" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YY1_CausalidiTrasporto_DLH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YY1_SO_CodiceStampa_DLH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YY1_CausalidiTrasporto_DLHT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YY1_SO_CodiceStampa_DLHT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dt_ins" Type="DateTime" Precision="3" />
+          <Property Name="Arxivar_Import_Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Arxivar_Letto" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SAP_Conservazione_Import_to_Arxivar">
+          <Key>
+            <PropertyRef Name="AccountingDocument" />
+          </Key>
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccountingDocument" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostingDate" Type="Double" />
+          <Property Name="AccountingDocumentType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Riferimento" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="Double" />
+          <Property Name="Amount" Type="Double" />
+        </EntityType>
+        <EntityType Name="SAP_Open_Item_CE_Fornitori">
+          <Key>
+            <PropertyRef Name="AccountingDocument" />
+            <PropertyRef Name="AccountingDocumentItem" />
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="FiscalYear" />
+          </Key>
+          <Property Name="AccountingDocument" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocumentItem" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FiscalYear" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyCodeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocumentItemType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ClearingDate" Type="DateTime" Precision="3" />
+          <Property Name="ClearingCreationDate" Type="DateTime" Precision="3" />
+          <Property Name="ClearingAccountingDocument" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DebitCreditCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessArea" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Branch" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessTransactionType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AssignmentReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentItemText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentReferenceID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocument" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocCreatedByUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocumentCreationDate" Type="DateTime" Precision="3" />
+          <Property Name="Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DueCalculationBaseDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AmountInCompanyCodeCurrency" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocumentType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="ProfitCenter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangeDate" Type="DateTime" Precision="3" />
+          <Property Name="NetDueDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentTerms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PostingDate" Type="DateTime" Precision="3" />
+          <Property Name="ProfitCenterName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalesDocument" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PostingKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Supplier" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SAP_BI_oldModelStoreContainer" CdmEntityContainer="SAP_BI_oldEntities">
+          <EntitySetMapping Name="SAP_InvoiceOLD">
+            <EntityTypeMapping TypeName="SAP_BI_oldModel.SAP_InvoiceOLD">
+              <MappingFragment StoreEntitySet="SAP_Invoice">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BillingDocument" ColumnName="BillingDocument" />
+                <ScalarProperty Name="IncotermsLocation2" ColumnName="IncotermsLocation2" />
+                <ScalarProperty Name="BillingDocumentCategory" ColumnName="BillingDocumentCategory" />
+                <ScalarProperty Name="BillingDocumentType" ColumnName="BillingDocumentType" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="BillingDocumentListDate" ColumnName="BillingDocumentListDate" />
+                <ScalarProperty Name="BillingDocumentListType" ColumnName="BillingDocumentListType" />
+                <ScalarProperty Name="BillingIssueType" ColumnName="BillingIssueType" />
+                <ScalarProperty Name="AccountingTransferStatus" ColumnName="AccountingTransferStatus" />
+                <ScalarProperty Name="DistributionChannel" ColumnName="DistributionChannel" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="BillingDocumentDate" ColumnName="BillingDocumentDate" />
+                <ScalarProperty Name="BillingDocumentIsCancelled" ColumnName="BillingDocumentIsCancelled" />
+                <ScalarProperty Name="CancelledBillingDocument" ColumnName="CancelledBillingDocument" />
+                <ScalarProperty Name="ForeignTrade" ColumnName="ForeignTrade" />
+                <ScalarProperty Name="AccountingPostingStatus" ColumnName="AccountingPostingStatus" />
+                <ScalarProperty Name="BillingDocCombinationCriteria" ColumnName="BillingDocCombinationCriteria" />
+                <ScalarProperty Name="CustomerRebateAgreement" ColumnName="CustomerRebateAgreement" />
+                <ScalarProperty Name="CreditControlArea" ColumnName="CreditControlArea" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CustomerGroup" ColumnName="CustomerGroup" />
+                <ScalarProperty Name="DunningKey" ColumnName="DunningKey" />
+                <ScalarProperty Name="DunningBlockingReason" ColumnName="DunningBlockingReason" />
+                <ScalarProperty Name="CustomerPriceGroup" ColumnName="CustomerPriceGroup" />
+                <ScalarProperty Name="DunningArea" ColumnName="DunningArea" />
+                <ScalarProperty Name="AssignmentReference" ColumnName="AssignmentReference" />
+                <ScalarProperty Name="DocumentReferenceID" ColumnName="DocumentReferenceID" />
+                <ScalarProperty Name="ExchangeRateType" ColumnName="ExchangeRateType" />
+                <ScalarProperty Name="ExchangeRateDate" ColumnName="ExchangeRateDate" />
+                <ScalarProperty Name="HierarchyTypePricing" ColumnName="HierarchyTypePricing" />
+                <ScalarProperty Name="CustomerTaxClassification1" ColumnName="CustomerTaxClassification1" />
+                <ScalarProperty Name="CustomerTaxClassification2" ColumnName="CustomerTaxClassification2" />
+                <ScalarProperty Name="CustomerTaxClassification3" ColumnName="CustomerTaxClassification3" />
+                <ScalarProperty Name="CustomerTaxClassification4" ColumnName="CustomerTaxClassification4" />
+                <ScalarProperty Name="CustomerTaxClassification5" ColumnName="CustomerTaxClassification5" />
+                <ScalarProperty Name="CustomerTaxClassification6" ColumnName="CustomerTaxClassification6" />
+                <ScalarProperty Name="CustomerTaxClassification7" ColumnName="CustomerTaxClassification7" />
+                <ScalarProperty Name="CustomerTaxClassification8" ColumnName="CustomerTaxClassification8" />
+                <ScalarProperty Name="CustomerTaxClassification9" ColumnName="CustomerTaxClassification9" />
+                <ScalarProperty Name="AcctgExchangeRateIsIndrctQtan" ColumnName="AcctgExchangeRateIsIndrctQtan" />
+                <ScalarProperty Name="AbsltAccountingExchangeRate" ColumnName="AbsltAccountingExchangeRate" />
+                <ScalarProperty Name="AccountingExchangeRateIsSet" ColumnName="AccountingExchangeRateIsSet" />
+                <ScalarProperty Name="CustomerAccountAssignmentGroup" ColumnName="CustomerAccountAssignmentGroup" />
+                <ScalarProperty Name="IncotermsClassification" ColumnName="IncotermsClassification" />
+                <ScalarProperty Name="AccountingDocument" ColumnName="AccountingDocument" />
+                <ScalarProperty Name="IncotermsLocation1" ColumnName="IncotermsLocation1" />
+                <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="ContractAccount" ColumnName="ContractAccount" />
+                <ScalarProperty Name="CustomerPaymentTerms" ColumnName="CustomerPaymentTerms" />
+                <ScalarProperty Name="AdditionalValueDays" ColumnName="AdditionalValueDays" />
+                <ScalarProperty Name="FixedValueDate" ColumnName="FixedValueDate" />
+                <ScalarProperty Name="StatisticsCurrency" ColumnName="StatisticsCurrency" />
+                <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="PayerParty" ColumnName="PayerParty" />
+                <ScalarProperty Name="LastChangeDateTime" ColumnName="LastChangeDateTime" />
+                <ScalarProperty Name="IncotermsTransferLocation" ColumnName="IncotermsTransferLocation" />
+                <ScalarProperty Name="IncotermsVersion" ColumnName="IncotermsVersion" />
+                <ScalarProperty Name="OverallPricingIncompletionSts" ColumnName="OverallPricingIncompletionSts" />
+                <ScalarProperty Name="OvrlItmGeneralIncompletionSts" ColumnName="OvrlItmGeneralIncompletionSts" />
+                <ScalarProperty Name="IsEUTriangularDeal" ColumnName="IsEUTriangularDeal" />
+                <ScalarProperty Name="InvoiceListStatus" ColumnName="InvoiceListStatus" />
+                <ScalarProperty Name="LogicalSystem" ColumnName="LogicalSystem" />
+                <ScalarProperty Name="IsExportDelivery" ColumnName="IsExportDelivery" />
+                <ScalarProperty Name="OverallBillingStatus" ColumnName="OverallBillingStatus" />
+                <ScalarProperty Name="OverallSDProcessStatus" ColumnName="OverallSDProcessStatus" />
+                <ScalarProperty Name="ManualInvoiceMaintIsRelevant" ColumnName="ManualInvoiceMaintIsRelevant" />
+                <ScalarProperty Name="IsIntrastatReportingRelevant" ColumnName="IsIntrastatReportingRelevant" />
+                <ScalarProperty Name="InternalFinancialDocument" ColumnName="InternalFinancialDocument" />
+                <ScalarProperty Name="IsRelevantForAccrual" ColumnName="IsRelevantForAccrual" />
+                <ScalarProperty Name="IsIntrastatReportingExcluded" ColumnName="IsIntrastatReportingExcluded" />
+                <ScalarProperty Name="PartnerCompany" ColumnName="PartnerCompany" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="VATRegistration" ColumnName="VATRegistration" />
+                <ScalarProperty Name="PurchaseOrderByCustomer" ColumnName="PurchaseOrderByCustomer" />
+                <ScalarProperty Name="PriceListType" ColumnName="PriceListType" />
+                <ScalarProperty Name="SalesOrganization" ColumnName="SalesOrganization" />
+                <ScalarProperty Name="SalesDistrict" ColumnName="SalesDistrict" />
+                <ScalarProperty Name="SEPAMandate" ColumnName="SEPAMandate" />
+                <ScalarProperty Name="SDDocumentCategory" ColumnName="SDDocumentCategory" />
+                <ScalarProperty Name="SDPricingProcedure" ColumnName="SDPricingProcedure" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="TotalGrossAmount" ColumnName="TotalGrossAmount" />
+                <ScalarProperty Name="TotalNetAmount" ColumnName="TotalNetAmount" />
+                <ScalarProperty Name="SoldToParty" ColumnName="SoldToParty" />
+                <ScalarProperty Name="SalesDocumentCondition" ColumnName="SalesDocumentCondition" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="ShippingCondition" ColumnName="ShippingCondition" />
+                <ScalarProperty Name="TaxDepartureCountry" ColumnName="TaxDepartureCountry" />
+                <ScalarProperty Name="TransactionCurrency" ColumnName="TransactionCurrency" />
+                <ScalarProperty Name="VATRegistrationCountry" ColumnName="VATRegistrationCountry" />
+                <ScalarProperty Name="VATRegistrationOrigin" ColumnName="VATRegistrationOrigin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARXIVAR_Fatture_Errore">
+            <EntityTypeMapping TypeName="SAP_BI_oldModel.ARXIVAR_Fatture_Errore">
+              <MappingFragment StoreEntitySet="ARXIVAR_Fatture_Errore">
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Errore" ColumnName="Errore" />
+                <ScalarProperty Name="AccountingDocument" ColumnName="AccountingDocument" />
+                <ScalarProperty Name="BillingDocument" ColumnName="BillingDocument" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAP_Testate_Outbound_Delivery_Arxivar">
+            <EntityTypeMapping TypeName="SAP_BI_oldModel.SAP_Testate_Outbound_Delivery_Arxivar">
+              <MappingFragment StoreEntitySet="SAP_Testate_Outbound_Delivery_Arxivar">
+                <ScalarProperty Name="Arxivar_Letto" ColumnName="Arxivar_Letto" />
+                <ScalarProperty Name="Arxivar_Import_Result" ColumnName="Arxivar_Import_Result" />
+                <ScalarProperty Name="dt_ins" ColumnName="dt_ins" />
+                <ScalarProperty Name="YY1_SO_CodiceStampa_DLHT" ColumnName="YY1_SO_CodiceStampa_DLHT" />
+                <ScalarProperty Name="YY1_CausalidiTrasporto_DLHT" ColumnName="YY1_CausalidiTrasporto_DLHT" />
+                <ScalarProperty Name="YY1_SO_CodiceStampa_DLH" ColumnName="YY1_SO_CodiceStampa_DLH" />
+                <ScalarProperty Name="YY1_CausalidiTrasporto_DLH" ColumnName="YY1_CausalidiTrasporto_DLH" />
+                <ScalarProperty Name="WarehouseStagingArea" ColumnName="WarehouseStagingArea" />
+                <ScalarProperty Name="WarehouseGate" ColumnName="WarehouseGate" />
+                <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+                <ScalarProperty Name="UnloadingPointName" ColumnName="UnloadingPointName" />
+                <ScalarProperty Name="TransportationPlanningTime" ColumnName="TransportationPlanningTime" />
+                <ScalarProperty Name="TransportationPlanningStatus" ColumnName="TransportationPlanningStatus" />
+                <ScalarProperty Name="TransportationPlanningDate" ColumnName="TransportationPlanningDate" />
+                <ScalarProperty Name="TransportationGroup" ColumnName="TransportationGroup" />
+                <ScalarProperty Name="TransactionCurrency" ColumnName="TransactionCurrency" />
+                <ScalarProperty Name="TotalNumberOfPackage" ColumnName="TotalNumberOfPackage" />
+                <ScalarProperty Name="TotalCreditCheckStatus" ColumnName="TotalCreditCheckStatus" />
+                <ScalarProperty Name="TotalBlockStatus" ColumnName="TotalBlockStatus" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="StatisticsCurrency" ColumnName="StatisticsCurrency" />
+                <ScalarProperty Name="SpecialProcessingCode" ColumnName="SpecialProcessingCode" />
+                <ScalarProperty Name="SoldToParty" ColumnName="SoldToParty" />
+                <ScalarProperty Name="ShipToParty" ColumnName="ShipToParty" />
+                <ScalarProperty Name="ShippingType" ColumnName="ShippingType" />
+                <ScalarProperty Name="ShippingPoint" ColumnName="ShippingPoint" />
+                <ScalarProperty Name="ShippingCondition" ColumnName="ShippingCondition" />
+                <ScalarProperty Name="ShipmentBlockReason" ColumnName="ShipmentBlockReason" />
+                <ScalarProperty Name="SDDocumentCategory" ColumnName="SDDocumentCategory" />
+                <ScalarProperty Name="SalesOrganization" ColumnName="SalesOrganization" />
+                <ScalarProperty Name="SalesOffice" ColumnName="SalesOffice" />
+                <ScalarProperty Name="SalesDistrict" ColumnName="SalesDistrict" />
+                <ScalarProperty Name="RouteSchedule" ColumnName="RouteSchedule" />
+                <ScalarProperty Name="ReceivingPlant" ColumnName="ReceivingPlant" />
+                <ScalarProperty Name="ProposedDeliveryRoute" ColumnName="ProposedDeliveryRoute" />
+                <ScalarProperty Name="ProofOfDeliveryDate" ColumnName="ProofOfDeliveryDate" />
+                <ScalarProperty Name="PlannedGoodsIssueDate" ColumnName="PlannedGoodsIssueDate" />
+                <ScalarProperty Name="PickingTime" ColumnName="PickingTime" />
+                <ScalarProperty Name="PickingDate" ColumnName="PickingDate" />
+                <ScalarProperty Name="PickedItemsLocation" ColumnName="PickedItemsLocation" />
+                <ScalarProperty Name="PaymentGuaranteeProcedure" ColumnName="PaymentGuaranteeProcedure" />
+                <ScalarProperty Name="OvrlItmPickingIncompletionSts" ColumnName="OvrlItmPickingIncompletionSts" />
+                <ScalarProperty Name="OvrlItmPackingIncompletionSts" ColumnName="OvrlItmPackingIncompletionSts" />
+                <ScalarProperty Name="OvrlItmGeneralIncompletionSts" ColumnName="OvrlItmGeneralIncompletionSts" />
+                <ScalarProperty Name="OvrlItmGdsMvtIncompletionSts" ColumnName="OvrlItmGdsMvtIncompletionSts" />
+                <ScalarProperty Name="OvrlItmDelivIncompletionSts" ColumnName="OvrlItmDelivIncompletionSts" />
+                <ScalarProperty Name="OverallWarehouseActivityStatus" ColumnName="OverallWarehouseActivityStatus" />
+                <ScalarProperty Name="OverallSDProcessStatus" ColumnName="OverallSDProcessStatus" />
+                <ScalarProperty Name="OverallProofOfDeliveryStatus" ColumnName="OverallProofOfDeliveryStatus" />
+                <ScalarProperty Name="OverallPickingStatus" ColumnName="OverallPickingStatus" />
+                <ScalarProperty Name="OverallPickingConfStatus" ColumnName="OverallPickingConfStatus" />
+                <ScalarProperty Name="OverallPackingStatus" ColumnName="OverallPackingStatus" />
+                <ScalarProperty Name="OverallIntcoBillingStatus" ColumnName="OverallIntcoBillingStatus" />
+                <ScalarProperty Name="OverallGoodsMovementStatus" ColumnName="OverallGoodsMovementStatus" />
+                <ScalarProperty Name="OverallDelivReltdBillgStatus" ColumnName="OverallDelivReltdBillgStatus" />
+                <ScalarProperty Name="OverallDelivConfStatus" ColumnName="OverallDelivConfStatus" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderCombinationIsAllowed" ColumnName="OrderCombinationIsAllowed" />
+                <ScalarProperty Name="MeansOfTransportType" ColumnName="MeansOfTransportType" />
+                <ScalarProperty Name="MeansOfTransportRefMaterial" ColumnName="MeansOfTransportRefMaterial" />
+                <ScalarProperty Name="MeansOfTransport" ColumnName="MeansOfTransport" />
+                <ScalarProperty Name="LoadingTime" ColumnName="LoadingTime" />
+                <ScalarProperty Name="LoadingPoint" ColumnName="LoadingPoint" />
+                <ScalarProperty Name="LoadingDate" ColumnName="LoadingDate" />
+                <ScalarProperty Name="LastChangedByUser" ColumnName="LastChangedByUser" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="IsExportDelivery" ColumnName="IsExportDelivery" />
+                <ScalarProperty Name="IsDeliveryForSingleWarehouse" ColumnName="IsDeliveryForSingleWarehouse" />
+                <ScalarProperty Name="InternalFinancialDocument" ColumnName="InternalFinancialDocument" />
+                <ScalarProperty Name="IntercompanyBillingDate" ColumnName="IntercompanyBillingDate" />
+                <ScalarProperty Name="IncotermsTransferLocation" ColumnName="IncotermsTransferLocation" />
+                <ScalarProperty Name="IncotermsClassification" ColumnName="IncotermsClassification" />
+                <ScalarProperty Name="HeaderWeightUnit" ColumnName="HeaderWeightUnit" />
+                <ScalarProperty Name="HeaderVolumeUnit" ColumnName="HeaderVolumeUnit" />
+                <ScalarProperty Name="HeaderVolume" ColumnName="HeaderVolume" />
+                <ScalarProperty Name="HeaderPickgIncompletionStatus" ColumnName="HeaderPickgIncompletionStatus" />
+                <ScalarProperty Name="HeaderPackingIncompletionSts" ColumnName="HeaderPackingIncompletionSts" />
+                <ScalarProperty Name="HeaderNetWeight" ColumnName="HeaderNetWeight" />
+                <ScalarProperty Name="HeaderGrossWeight" ColumnName="HeaderGrossWeight" />
+                <ScalarProperty Name="HeaderDelivIncompletionStatus" ColumnName="HeaderDelivIncompletionStatus" />
+                <ScalarProperty Name="HeaderBillingBlockReason" ColumnName="HeaderBillingBlockReason" />
+                <ScalarProperty Name="HeaderBillgIncompletionStatus" ColumnName="HeaderBillgIncompletionStatus" />
+                <ScalarProperty Name="HdrGoodsMvtIncompletionStatus" ColumnName="HdrGoodsMvtIncompletionStatus" />
+                <ScalarProperty Name="HdrGeneralIncompletionStatus" ColumnName="HdrGeneralIncompletionStatus" />
+                <ScalarProperty Name="HandlingUnitInStock" ColumnName="HandlingUnitInStock" />
+                <ScalarProperty Name="GoodsIssueTime" ColumnName="GoodsIssueTime" />
+                <ScalarProperty Name="GoodsIssueOrReceiptSlipNumber" ColumnName="GoodsIssueOrReceiptSlipNumber" />
+                <ScalarProperty Name="FactoryCalendarByCustomer" ColumnName="FactoryCalendarByCustomer" />
+                <ScalarProperty Name="ExternalTransportSystem" ColumnName="ExternalTransportSystem" />
+                <ScalarProperty Name="ExternalIdentificationType" ColumnName="ExternalIdentificationType" />
+                <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+                <ScalarProperty Name="DistrStatusByDecentralizedWrhs" ColumnName="DistrStatusByDecentralizedWrhs" />
+                <ScalarProperty Name="DepreciationPercentage" ColumnName="DepreciationPercentage" />
+                <ScalarProperty Name="DeliveryVersion" ColumnName="DeliveryVersion" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="DeliveryPriority" ColumnName="DeliveryPriority" />
+                <ScalarProperty Name="DeliveryIsInPlant" ColumnName="DeliveryIsInPlant" />
+                <ScalarProperty Name="DeliveryDocumentType" ColumnName="DeliveryDocumentType" />
+                <ScalarProperty Name="DeliveryDocumentBySupplier" ColumnName="DeliveryDocumentBySupplier" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="DeliveryBlockReason" ColumnName="DeliveryBlockReason" />
+                <ScalarProperty Name="CustomerGroup" ColumnName="CustomerGroup" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+                <ScalarProperty Name="ConfirmationTime" ColumnName="ConfirmationTime" />
+                <ScalarProperty Name="CompleteDeliveryIsDefined" ColumnName="CompleteDeliveryIsDefined" />
+                <ScalarProperty Name="BillOfLading" ColumnName="BillOfLading" />
+                <ScalarProperty Name="BillingDocumentDate" ColumnName="BillingDocumentDate" />
+                <ScalarProperty Name="ActualGoodsMovementTime" ColumnName="ActualGoodsMovementTime" />
+                <ScalarProperty Name="ActualGoodsMovementDate" ColumnName="ActualGoodsMovementDate" />
+                <ScalarProperty Name="Receivinglocationtimezone" ColumnName="Receivinglocationtimezone" />
+                <ScalarProperty Name="ActualDeliveryRoute" ColumnName="ActualDeliveryRoute" />
+                <ScalarProperty Name="Shippinglocationtimezone" ColumnName="Shippinglocationtimezone" />
+                <ScalarProperty Name="DeliveryDocument" ColumnName="DeliveryDocument" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAP_Conservazione_Import_to_Arxivar">
+            <EntityTypeMapping TypeName="SAP_BI_oldModel.SAP_Conservazione_Import_to_Arxivar">
+              <MappingFragment StoreEntitySet="SAP_Conservazione_Import_to_Arxivar">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Riferimento" ColumnName="Riferimento" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="AccountingDocumentType" ColumnName="AccountingDocumentType" />
+                <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+                <ScalarProperty Name="AccountingDocument" ColumnName="AccountingDocument" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAP_Open_Item_CE_Fornitori">
+            <EntityTypeMapping TypeName="SAP_BI_oldModel.SAP_Open_Item_CE_Fornitori">
+              <MappingFragment StoreEntitySet="SAP_Open_Item_CE_Fornitori">
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="PostingKey" ColumnName="PostingKey" />
+                <ScalarProperty Name="SalesDocument" ColumnName="SalesDocument" />
+                <ScalarProperty Name="ProfitCenterName" ColumnName="ProfitCenterName" />
+                <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="PaymentTerms" ColumnName="PaymentTerms" />
+                <ScalarProperty Name="NetDueDate" ColumnName="NetDueDate" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="ProfitCenter" ColumnName="ProfitCenter" />
+                <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+                <ScalarProperty Name="AccountingDocumentType" ColumnName="AccountingDocumentType" />
+                <ScalarProperty Name="AmountInCompanyCodeCurrency" ColumnName="AmountInCompanyCodeCurrency" />
+                <ScalarProperty Name="InvoiceReference" ColumnName="InvoiceReference" />
+                <ScalarProperty Name="DueCalculationBaseDate" ColumnName="DueCalculationBaseDate" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="AccountingDocumentCreationDate" ColumnName="AccountingDocumentCreationDate" />
+                <ScalarProperty Name="AccountingDocCreatedByUser" ColumnName="AccountingDocCreatedByUser" />
+                <ScalarProperty Name="BillingDocument" ColumnName="BillingDocument" />
+                <ScalarProperty Name="DocumentReferenceID" ColumnName="DocumentReferenceID" />
+                <ScalarProperty Name="DocumentItemText" ColumnName="DocumentItemText" />
+                <ScalarProperty Name="AssignmentReference" ColumnName="AssignmentReference" />
+                <ScalarProperty Name="BusinessTransactionType" ColumnName="BusinessTransactionType" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="BusinessArea" ColumnName="BusinessArea" />
+                <ScalarProperty Name="DebitCreditCode" ColumnName="DebitCreditCode" />
+                <ScalarProperty Name="ClearingAccountingDocument" ColumnName="ClearingAccountingDocument" />
+                <ScalarProperty Name="ClearingCreationDate" ColumnName="ClearingCreationDate" />
+                <ScalarProperty Name="ClearingDate" ColumnName="ClearingDate" />
+                <ScalarProperty Name="AccountingDocumentItemType" ColumnName="AccountingDocumentItemType" />
+                <ScalarProperty Name="CompanyCodeName" ColumnName="CompanyCodeName" />
+                <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="AccountingDocumentItem" ColumnName="AccountingDocumentItem" />
+                <ScalarProperty Name="AccountingDocument" ColumnName="AccountingDocument" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

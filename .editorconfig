@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0006: Il file di metadati 'bin\Debug\Abletech.Utility.Convert.dll' non è stato trovato
+dotnet_diagnostic.CS0006.severity = none

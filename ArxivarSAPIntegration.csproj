@@ -1,0 +1,227 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{02A7B885-D2A5-45AB-A568-91FF3D2F715F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ArxivarSapIntegration</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ArxivarSapIntegration</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ArxivarSAPIntegration.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gears_view.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abletech.Arxivar.Client.WCFConnector">
+      <HintPath>Dll\Abletech.Arxivar.Client.WCFConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Arxivar.Entities, Version=7.0.0.0, Culture=neutral, PublicKeyToken=5954fa6a2fb99e64, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Abletech.Arxivar.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Arxivar.Server.Contracts, Version=7.0.0.0, Culture=neutral, PublicKeyToken=5954fa6a2fb99e64, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Abletech.Arxivar.Server.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Utility.Configurazione">
+      <HintPath>Dll\Abletech.Utility.Configurazione.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Utility.Convert, Version=7.0.0.0, Culture=neutral, PublicKeyToken=0b3ac022af8efa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Abletech.Utility.Convert.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Utility.Hash, Version=7.0.0.0, Culture=neutral, PublicKeyToken=0b3ac022af8efa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Abletech.Utility.Hash.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Utility.Logging.Base, Version=7.0.0.0, Culture=neutral, PublicKeyToken=0b3ac022af8efa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Abletech.Utility.Logging.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Abletech.Utility.Logging.Xml, Version=7.0.0.0, Culture=neutral, PublicKeyToken=0b3ac022af8efa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Abletech.Utility.Logging.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="ArxivarSAPIntegration.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\ArxivarSAPIntegration.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="stdole, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\stdole.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="app.config" />
+    <EntityDeploy Include="BI_STG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BI_STG1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BI_STG.edmx.diagram">
+      <DependentUpon>BI_STG.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="db.edmx.diagram">
+      <DependentUpon>db.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="db_bi.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db_bi1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="db_bi.edmx.diagram">
+      <DependentUpon>db_bi.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="sap_bi_old.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>sap_bi_old1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\Settings.settings" />
+    <None Include="sap_bi_old.edmx.diagram">
+      <DependentUpon>sap_bi_old.edmx</DependentUpon>
+    </None>
+    <None Include="Web References\BusinessPartner\BusinessPartnerGetResponseA_BusinessPartnerType.datasource" />
+    <None Include="Web References\BusinessPartner\BusinessPartnerOndemand_Total.wsdl" />
+    <None Include="Web References\BusinessPartner\Reference.map" />
+    <None Include="Web References\CulliganSapService\OutboundDeliveryGet.wsdl" />
+    <None Include="Web References\CulliganSapService\OutboundDeliveryGetResponseA_OutbDeliveryHeaderType.datasource" />
+    <None Include="Web References\CulliganSapService\Reference.map" />
+    <None Include="Web References\InvoicesGet\InvoicesGet.wsdl" />
+    <None Include="Web References\InvoicesGet\InvoicesGetResponseA_BillingDocumentType.datasource" />
+    <None Include="Web References\InvoicesGet\Reference.map" />
+    <None Include="Web References\MaterialDocumentGet\MaterialDocumentGet.wsdl" />
+    <None Include="Web References\MaterialDocumentGet\MaterialDocumentGetResponseA_MaterialDocumentItemType.datasource" />
+    <None Include="Web References\MaterialDocumentGet\Reference.map" />
+    <None Include="Web References\SalesOrderGet\Reference.map" />
+    <None Include="Web References\SalesOrderGet\SalesOrderGetResponseA_SalesOrderType.datasource" />
+    <None Include="Web References\SalesOrderGet\SalesOrderGet_3.wsdl" />
+    <None Include="Web References\SupplierGetSingle\Reference.map" />
+    <None Include="Web References\SupplierGetSingle\SupplierGetSingle.wsdl" />
+    <None Include="Web References\SupplierGetSingle\SupplierGetSingleResponseA_BusinessPartnerType.datasource" />
+    <None Include="Web References\SupplierInvoiceGet\Reference.map" />
+    <None Include="Web References\SupplierInvoiceGet\SupplierInvoiceGet.wsdl" />
+    <None Include="Web References\SupplierInvoiceGet\SupplierInvoiceGetResponseA_OperationalAcctgDocItemCubeType.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArxivarSAPIntegration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ArxivarSAPIntegration.Designer.cs">
+      <DependentUpon>ArxivarSAPIntegration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BI_STG.Designer.cs" />
+    <Compile Include="BI_STG1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BI_STG.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="db.Designer.cs" />
+    <Compile Include="db1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db_bi.Designer.cs" />
+    <Compile Include="db_bi1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_bi.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Definizioni.cs" />
+    <Compile Include="FormConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfiguration.designer.cs">
+      <DependentUpon>FormConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntegratorHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="sap_bi_old.Designer.cs" />
+    <Compile Include="sap_bi_old1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sap_bi_old.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceConfiguration.cs" />
+    <Compile Include="Web References\BusinessPartner\Reference.cs" />
+    <Compile Include="Web References\CulliganSapService\Reference.cs" />
+    <Compile Include="Web References\InvoicesGet\Reference.cs" />
+    <Compile Include="Web References\MaterialDocumentGet\Reference.cs" />
+    <Compile Include="Web References\SalesOrderGet\Reference.cs" />
+    <Compile Include="Web References\SupplierGetSingle\Reference.cs" />
+    <Compile Include="Web References\SupplierInvoiceGet\Reference.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormConfiguration.resx">
+      <DependentUpon>FormConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gears_view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="bin\Debug\Abletech.Utility.Convert.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
