@@ -110,8 +110,8 @@ namespace ArxivarSAPIntegration
 
                 ArxLogonRequest arxLogonRequest = new ArxLogonRequest
                 {
-                    ClientId = _config.clientId,
-                    ClientSecret = _config.clientSecret,
+                    ClientId = _config.ClientId,
+                    ClientSecret = _config.ClientSecret,
                     Username = _config.WcfUsername,
                     Password = _config.WcfPassword,
                     EnablePushEvents = false
