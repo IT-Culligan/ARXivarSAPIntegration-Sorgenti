@@ -110,8 +110,8 @@ namespace ArxivarSAPIntegration
 
                 ArxLogonRequest arxLogonRequest = new ArxLogonRequest
                 {
-                    ClientId = _config.clientId,
-                    ClientSecret = _config.clientSecret,
+                    ClientId = _config.ClientId,
+                    ClientSecret = _config.ClientSecret,
                     Username = _config.WcfUsername,
                     Password = _config.WcfPassword,
                     EnablePushEvents = false
@@ -275,7 +275,7 @@ namespace ArxivarSAPIntegration
         {
             List<RecordGestionale> ritorno = new List<RecordGestionale>();
 
-            if (TipoDocumento == EnumTipoDocumento.DDTOUT)
+            /*if (TipoDocumento == EnumTipoDocumento.DDTOUT)
             {
                 try
                 {
@@ -550,8 +550,8 @@ namespace ArxivarSAPIntegration
                 {
                     WriteError("Errore in parsaDocumento:{0}", errore.Message);
                 }
-            }
-            else if (TipoDocumento == EnumTipoDocumento.InvoiceOut)
+            }*/
+            if (TipoDocumento == EnumTipoDocumento.InvoiceOut)
             {
 
                 DateTime dataCall;
@@ -568,11 +568,11 @@ namespace ArxivarSAPIntegration
                 serviceInvoicesGet.Timeout = 9000000;
 
                 //using (SAP_BI_oldEntities context = new SAP_BI_oldEntities())
-                using (SAPEntities context = new SAPEntities())
+                using (ArxivarSapIntegration.BI_STGEntities1 context = new ArxivarSapIntegration.BI_STGEntities1())
                 {
 
    //                 DateTime da = System.Convert.ToDateTime("01/01/2022");
-                    DateTime a = System.Convert.ToDateTime("17/04/2022");
+                    DateTime a = System.Convert.ToDateTime("31/05/2022");
                    // DateTime a = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek);
                     //DateTime a = DateTime.Now.AddDays(-1);
 
@@ -639,7 +639,7 @@ namespace ArxivarSAPIntegration
                 serviceInvoicesGet.Timeout = 9000000;
 
                 //using (SAP_BI_oldEntities context = new SAP_BI_oldEntities())
-                using (SAPEntities context = new SAPEntities())
+                using (ArxivarSapIntegration.BI_STGEntities1 context = new ArxivarSapIntegration.BI_STGEntities1())
                 {
 
                     DateTime da = System.Convert.ToDateTime("01/01/2022");
@@ -763,110 +763,110 @@ namespace ArxivarSAPIntegration
 
         #region Importazione
 
-        private void INSDDTOUT(List<RecordGestionale> elementoDaInserirelist)
-        {
-            foreach (var elementoDaInserire in elementoDaInserirelist)
-            {
-                try
-                {
-                    if (checkDDTOut(elementoDaInserire))
-                    {
-                        continue;
-                    }
+        //private void INSDDTOUT(List<RecordGestionale> elementoDaInserirelist)
+        //{
+        //    foreach (var elementoDaInserire in elementoDaInserirelist)
+        //    {
+        //        try
+        //        {
+        //            if (checkDDTOut(elementoDaInserire))
+        //            {
+        //                continue;
+        //            }
 
-                    WriteInfo("Sto processando l'ID Gestionale {0}", elementoDaInserire.ID);
+        //            WriteInfo("Sto processando l'ID Gestionale {0}", elementoDaInserire.ID);
 
-                    if (string.IsNullOrEmpty(_config.ClasseDocDDTOut))
-                    {
-                        throw new Exception("La classe documentale DDt Cliente è vuota.");
-                    }
+        //            if (string.IsNullOrEmpty(_config.ClasseDocDDTOut))
+        //            {
+        //                throw new Exception("La classe documentale DDt Cliente è vuota.");
+        //            }
 
-                    using (var documentoDaInserire = _manager.ARX_DATI.Dm_Profile_ForInsert_Get_New_Instance_ByDocumentTypeCodice(_config.ClasseDocDDTOut))
-                    {
-                        //docu cicico = serviceBusinessPartner.CallBusinessPartnerGet("2018-07-05T00:00:00.000", "single", elementoDaInserire.clienteFatturazione);
-                        ElementoAnagraficaCliFor anagraficaCliente = parsaAnagrafica(elementoDaInserire, EnumTipoAnagrafica.Clienti);
+        //            using (var documentoDaInserire = _manager.ARX_DATI.Dm_Profile_ForInsert_Get_New_Instance_ByDocumentTypeCodice(_config.ClasseDocDDTOut))
+        //            {
+        //                //docu cicico = serviceBusinessPartner.CallBusinessPartnerGet("2018-07-05T00:00:00.000", "single", elementoDaInserire.clienteFatturazione);
+        //                ElementoAnagraficaCliFor anagraficaCliente = parsaAnagrafica(elementoDaInserire, EnumTipoAnagrafica.Clienti);
 
-                        if (anagraficaCliente == null)
-                        {
-                            IntegratorHelper.WriteResult(elementoDaInserire.numerodocumento, "Problemi anagrafica cliente.");
-                            WriteError("Errore: la ricerca del codice {0} non ha prodotto risultati. Non lo processo fino al prossimo avvio", elementoDaInserire.clienteFatturazione);
-                            _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
-                            throw new Exception(string.Format("Errore durante la ricerca del codice {0}", elementoDaInserire.clienteFatturazione));
-                        }
-                        documentoDaInserire.Aoo = _config.Aoo;
-                        documentoDaInserire.Stato = _config.StatoImport;
-                        documentoDaInserire.InOut = DmProfileInOut.Uscita;
+        //                if (anagraficaCliente == null)
+        //                {
+        //                    IntegratorHelper.WriteResult(elementoDaInserire.numerodocumento, "Problemi anagrafica cliente.");
+        //                    WriteError("Errore: la ricerca del codice {0} non ha prodotto risultati. Non lo processo fino al prossimo avvio", elementoDaInserire.clienteFatturazione);
+        //                    _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
+        //                    throw new Exception(string.Format("Errore durante la ricerca del codice {0}", elementoDaInserire.clienteFatturazione));
+        //                }
+        //                documentoDaInserire.Aoo = _config.Aoo;
+        //                documentoDaInserire.Stato = _config.StatoImport;
+        //                documentoDaInserire.InOut = DmProfileInOut.Uscita;
 
-                        int idrubricaCliente = CercaRubricaperCodice(anagraficaCliente, _rubricaClienti.RUBRICA, _rubricaClienti.ID, 2);
+        //                int idrubricaCliente = CercaRubricaperCodice(anagraficaCliente, _rubricaClienti.RUBRICA, _rubricaClienti.ID, 2);
 
-                        if (idrubricaCliente == 0)
-                        {
-                            throw new Exception(string.Format("Errore: non è stato possibile inserire il fornitore in rubrica per il record {0}", elementoDaInserire.codiceClienteFornitore));
-                        }
+        //                if (idrubricaCliente == 0)
+        //                {
+        //                    throw new Exception(string.Format("Errore: non è stato possibile inserire il fornitore in rubrica per il record {0}", elementoDaInserire.codiceClienteFornitore));
+        //                }
 
-                        Dm_DatiProfilo Destinatario = _manager.ARX_DATI.Dm_DatiProfilo_GetNewInstance_From_IdRubrica(idrubricaCliente, Dm_DatiProfilo_Campo.DE);
-                        documentoDaInserire.To.Add(Destinatario);
+        //                Dm_DatiProfilo Destinatario = _manager.ARX_DATI.Dm_DatiProfilo_GetNewInstance_From_IdRubrica(idrubricaCliente, Dm_DatiProfilo_Campo.DE);
+        //                documentoDaInserire.To.Add(Destinatario);
 
-                        documentoDaInserire.ProtocolloInterno = elementoDaInserire.numerodocumento.ToString();
-                        documentoDaInserire.DataDoc = elementoDaInserire.dataDocumento;
+        //                documentoDaInserire.ProtocolloInterno = elementoDaInserire.numerodocumento.ToString();
+        //                documentoDaInserire.DataDoc = elementoDaInserire.dataDocumento;
 
-                        documentoDaInserire.DocName = elementoDaInserire.oggetto;
+        //                documentoDaInserire.DocName = elementoDaInserire.oggetto;
 
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "CODCON", elementoDaInserire.codiceContatore);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "NUMDOC", elementoDaInserire.numerodocumento);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "DATADOC", elementoDaInserire.dataDocumento);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "STRUTTURA", elementoDaInserire.struttura);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "DESTMERCE", elementoDaInserire.destinazioneMerce);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "PIVA", Destinatario.PARTIVA);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "CODFIS", Destinatario.CODFIS);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "ESERCIZIO", elementoDaInserire.dataDocumento.Year);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "NUMREG", elementoDaInserire.codiceNumero);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "CODCLIFOR", elementoDaInserire.clienteFatturazione);
-                        _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "Cd_Clien", elementoDaInserire.clienteFatturazione);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "CODCON", elementoDaInserire.codiceContatore);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "NUMDOC", elementoDaInserire.numerodocumento);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "DATADOC", elementoDaInserire.dataDocumento);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "STRUTTURA", elementoDaInserire.struttura);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "DESTMERCE", elementoDaInserire.destinazioneMerce);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "PIVA", Destinatario.PARTIVA);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "CODFIS", Destinatario.CODFIS);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "ESERCIZIO", elementoDaInserire.dataDocumento.Year);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "NUMREG", elementoDaInserire.codiceNumero);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "CODCLIFOR", elementoDaInserire.clienteFatturazione);
+        //                _common.ValorizzaAggiuntivo(documentoDaInserire.Aggiuntivi, "Cd_Clien", elementoDaInserire.clienteFatturazione);
 
-                        string barcode = string.Empty;
+        //                string barcode = string.Empty;
 
-                        if (!string.IsNullOrEmpty(elementoDaInserire.barcode))
-                        {
-                            barcode = elementoDaInserire.barcode;
-                        }
+        //                if (!string.IsNullOrEmpty(elementoDaInserire.barcode))
+        //                {
+        //                    barcode = elementoDaInserire.barcode;
+        //                }
 
-                        using (var risultatoInserimento = _manager.ARX_DATI.Dm_Profile_Insert_For_Barcode(documentoDaInserire, barcode))
-                        {
-                            if (risultatoInserimento.EXCEPTION != Security_Exception.Nothing)
-                            {
-                                _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
-                                WriteError("L'inserimento del documento id {0} nella classe DDTOUT non è andato a buon fine: {1}. Non verrà riprocessato fino al riavvio", elementoDaInserire.ID, risultatoInserimento.MESSAGE);
-                            }
-                            else
-                            {
-                                _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
-                                WriteWarning("Il documento {0} nella classe DDTOUT è stato inserito regolarmente docnumber {1}", elementoDaInserire.ID, risultatoInserimento.PROFILE.DOCNUMBER);
-                                _manager.ARX_DATI.SD_ASSOCDOC_Insert(risultatoInserimento.PROFILE.DOCNUMBER, formattaCodiceDDTOut(elementoDaInserire), string.Empty);
+        //                using (var risultatoInserimento = _manager.ARX_DATI.Dm_Profile_Insert_For_Barcode(documentoDaInserire, barcode))
+        //                {
+        //                    if (risultatoInserimento.EXCEPTION != Security_Exception.Nothing)
+        //                    {
+        //                        _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
+        //                        WriteError("L'inserimento del documento id {0} nella classe DDTOUT non è andato a buon fine: {1}. Non verrà riprocessato fino al riavvio", elementoDaInserire.ID, risultatoInserimento.MESSAGE);
+        //                    }
+        //                    else
+        //                    {
+        //                        _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
+        //                        WriteWarning("Il documento {0} nella classe DDTOUT è stato inserito regolarmente docnumber {1}", elementoDaInserire.ID, risultatoInserimento.PROFILE.DOCNUMBER);
+        //                        _manager.ARX_DATI.SD_ASSOCDOC_Insert(risultatoInserimento.PROFILE.DOCNUMBER, formattaCodiceDDTOut(elementoDaInserire), string.Empty);
 
-                                if (!string.IsNullOrEmpty(elementoDaInserire.barcode))
-                                {
-                                    _manager.ARX_DATI.Dm_Barcode_Insert(risultatoInserimento.PROFILE.DOCNUMBER, Dm_Barcode_TipoImpronta.N, elementoDaInserire.barcode);
-                                }
-                            }
-                        }
-                    }
+        //                        if (!string.IsNullOrEmpty(elementoDaInserire.barcode))
+        //                        {
+        //                            _manager.ARX_DATI.Dm_Barcode_Insert(risultatoInserimento.PROFILE.DOCNUMBER, Dm_Barcode_TipoImpronta.N, elementoDaInserire.barcode);
+        //                        }
+        //                    }
+        //                }
+        //            }
 
-                    if (_manager.UserGrantor != null)
-                    {
-                        _manager.DeImpersonate();
-                    }
-                }
-                catch (Exception errore)
-                {
-                    _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
-                    WriteError("Errore in nella procedura inserimento:{0}", errore.Message);
-                }
+        //            if (_manager.UserGrantor != null)
+        //            {
+        //                _manager.DeImpersonate();
+        //            }
+        //        }
+        //        catch (Exception errore)
+        //        {
+        //            _documentiImportati.Add(new DocumentiImportati { Tipo = EnumTipoDocumento.DDTOUT, Chiave = formattaCodiceDDTOut(elementoDaInserire) });
+        //            WriteError("Errore in nella procedura inserimento:{0}", errore.Message);
+        //        }
 
-                IntegratorHelper.SetRead(elementoDaInserire.numerodocumento, true);
-            }
+        //        IntegratorHelper.SetRead(elementoDaInserire.numerodocumento, true);
+        //    }
 
-        }
+        //}
 
         private void INSOV(List<RecordGestionale> elementoDaInserireList)
         {
@@ -1675,21 +1675,21 @@ namespace ArxivarSAPIntegration
 
         public void WriteErrorInDb(string BillingDocument, string AccountingDocument, string Errore, string cliente)
         {
-            using (SAP_BI_oldEntities context = new SAP_BI_oldEntities())
-            {
-                ARXIVAR_Fatture_Errore fe = new ARXIVAR_Fatture_Errore();
+            //using (SAP_BI_oldEntities context = new SAP_BI_oldEntities())
+            //{
+            //    ARXIVAR_Fatture_Errore fe = new ARXIVAR_Fatture_Errore();
 
-                fe.AccountingDocument = AccountingDocument;
-                fe.BillingDocument = BillingDocument;
-                fe.Errore = Errore;
-                fe.Cliente = cliente;
+            //    fe.AccountingDocument = AccountingDocument;
+            //    fe.BillingDocument = BillingDocument;
+            //    fe.Errore = Errore;
+            //    fe.Cliente = cliente;
 
-                context.AddToARXIVAR_Fatture_Errore(fe);
-                context.SaveChanges();
+            //    context.AddToARXIVAR_Fatture_Errore(fe);
+            //    context.SaveChanges();
 
 
 
-            }
+            //}
         }
 
         private ElementoAnagraficaCliFor parsaAnagrafica(RecordGestionale elementoDaInserire, EnumTipoAnagrafica tipoAnagrafica)
@@ -1711,14 +1711,15 @@ namespace ArxivarSAPIntegration
 
             if (string.IsNullOrEmpty(codiceClienteFornitore))
             {
-                IntegratorHelper.WriteResult(elementoDaInserire.numerodocumento, "Il codice cliente/fornitore è vuoto e non procedo con la ricerca");
+                //IntegratorHelper.WriteResult(elementoDaInserire.numerodocumento, "Il codice cliente/fornitore è vuoto e non procedo con la ricerca");
                 throw new Exception("Il codice cliente/fornitore è vuoto e non procedo con la ricerca");
             }
 
             if (tipoAnagrafica == EnumTipoAnagrafica.Clienti)
             {
+                 
                 //using (SAPEntities context = new SAPEntities())
-                using (BI_STGEntities context = new BI_STGEntities())
+                using (ArxivarSapIntegration.BI_STGEntities1 context = new ArxivarSapIntegration.BI_STGEntities1())
                 {
                     var result = (from t in context.SFDC_Anagrafica_Clienti
                                   where t.AccountNumber__c.Equals(codiceClienteFornitore)
@@ -1887,16 +1888,19 @@ namespace ArxivarSAPIntegration
 
             if (string.IsNullOrEmpty(codiceClienteFornitore))
             {
-                IntegratorHelper.WriteResult(elementoDaInserire.numerodocumento, "Il codice cliente/fornitore è vuoto e non procedo con la ricerca");
+                //IntegratorHelper.WriteResult(elementoDaInserire.numerodocumento, "Il codice cliente/fornitore è vuoto e non procedo con la ricerca");
                 throw new Exception("Il codice cliente/fornitore è vuoto e non procedo con la ricerca");
             }
 
             if (tipoAnagrafica == EnumTipoAnagrafica.Clienti)
             {
-                using (SAPEntities context = new SAPEntities())
+                //using (SAPEntities context = new SAPEntities())
+                using (ArxivarSapIntegration.BI_STGEntities1 context = new ArxivarSapIntegration.BI_STGEntities1())
+
                 {
-                    var result = (from t in context.PREPROD_SFDC_Account
-                                  where t.AccountNumber__c.Equals(codiceClienteFornitore)
+                    var result = (//from t in context.PREPROD_SFDC_Account
+                        from t in context.SFDC_Anagrafica_Clienti
+                        where t.AccountNumber__c.Equals(codiceClienteFornitore)
                                   select t).FirstOrDefault();
 
                     //var result = (from t in context.ANAGRAFICA_CLIENTI_temp

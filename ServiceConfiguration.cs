@@ -57,13 +57,13 @@ namespace ArxivarSAPIntegration
         }
 
         [CategoryAttribute("Impostazioni connessione"), DescriptionAttribute("Client Id connessione"), PasswordPropertyText(true)]
-        public string clientId
+        public string ClientId
         {
             get { return _clientId; }
             set { _clientId = value; }
         }
         [CategoryAttribute("Impostazioni connessione"), DescriptionAttribute("Client Secret"), PasswordPropertyText(true)]
-        public string clientSecret
+        public string ClientSecret
         {
             get { return _clientSecret; }
             set { _clientSecret = value; }
@@ -305,6 +305,8 @@ namespace ArxivarSAPIntegration
             WcfPassword = "culli.123";
             SapUsername = "S0019098664";
             SapPassword = "Culligan18";
+            ClientId = "CulliganCustomPlugin";
+            ClientSecret = "E09C56781F004AF69753CE9D622AAD03";
             Prioritario = true;
 
             primoGiroGiorni = 1;

@@ -76,6 +76,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dll\ArxivarSAPIntegration.XmlSerializers.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="stdole, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -83,6 +86,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -91,6 +95,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -100,34 +105,17 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="app.config" />
-    <EntityDeploy Include="BI_STG.edmx">
+    <EntityDeploy Include="BI_STG_NEW.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BI_STG1.Designer.cs</LastGenOutput>
+      <LastGenOutput>BI_STG_NEW.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BI_STG.edmx.diagram">
-      <DependentUpon>BI_STG.edmx</DependentUpon>
+    <None Include="BI_STG_NEW.edmx.diagram">
+      <DependentUpon>BI_STG_NEW.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="db.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>db1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="db.edmx.diagram">
-      <DependentUpon>db.edmx</DependentUpon>
-    </None>
-    <EntityDeploy Include="db_bi.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>db_bi1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="db_bi.edmx.diagram">
-      <DependentUpon>db_bi.edmx</DependentUpon>
-    </None>
-    <EntityDeploy Include="sap_bi_old.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>sap_bi_old1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Properties\Settings.settings" />
-    <None Include="sap_bi_old.edmx.diagram">
-      <DependentUpon>sap_bi_old.edmx</DependentUpon>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\BusinessPartner\BusinessPartnerGetResponseA_BusinessPartnerType.datasource" />
     <None Include="Web References\BusinessPartner\BusinessPartnerOndemand_Total.wsdl" />
@@ -158,26 +146,29 @@
     <Compile Include="ArxivarSAPIntegration.Designer.cs">
       <DependentUpon>ArxivarSAPIntegration.cs</DependentUpon>
     </Compile>
-    <Compile Include="BI_STG.Designer.cs" />
-    <Compile Include="BI_STG1.Designer.cs">
+    <Compile Include="BI_STG_NEW.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BI_STG.edmx</DependentUpon>
+      <DependentUpon>BI_STG_NEW.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BI_STG_NEW.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BI_STG_NEW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BI_STG_NEW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BI_STG_NEW.edmx</DependentUpon>
     </Compile>
     <Compile Include="Common.cs" />
-    <Compile Include="db.Designer.cs" />
-    <Compile Include="db1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="db_bi.Designer.cs" />
-    <Compile Include="db_bi1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_bi.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Definizioni.cs" />
+    <Compile Include="FE_PDF_Arxivar_CHECK.cs">
+      <DependentUpon>BI_STG_NEW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FE_PDF_Arxivar_CHECK_FRIZZY.cs">
+      <DependentUpon>BI_STG_NEW.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,13 +180,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Properties\Settings.Designer.cs" />
-    <Compile Include="sap_bi_old.Designer.cs" />
-    <Compile Include="sap_bi_old1.Designer.cs">
+    <Compile Include="Properties\Settings1.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sap_bi_old.edmx</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ServiceConfiguration.cs" />
+    <Compile Include="SFDC_Anagrafica_Clienti.cs">
+      <DependentUpon>BI_STG_NEW.tt</DependentUpon>
+    </Compile>
     <Compile Include="Web References\BusinessPartner\Reference.cs" />
     <Compile Include="Web References\CulliganSapService\Reference.cs" />
     <Compile Include="Web References\InvoicesGet\Reference.cs" />
@@ -211,10 +204,23 @@
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BI_STG_NEW.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BI_STG_NEW.edmx</DependentUpon>
+      <LastGenOutput>BI_STG_NEW.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BI_STG_NEW.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BI_STG_NEW.edmx</DependentUpon>
+      <LastGenOutput>BI_STG_NEW.cs</LastGenOutput>
+    </Content>
     <Content Include="gears_view.ico" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="bin\Debug\Abletech.Utility.Convert.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

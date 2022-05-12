@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BI_STGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BI_STGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="SFDC_Anagrafica_Clienti">
           <Key>
             <PropertyRef Name="AccountNumber__c" />
@@ -199,16 +199,71 @@
           <Property Name="TipoCliente" Type="varchar" MaxLength="10" />
           <Property Name="cli" Type="varchar" MaxLength="255" />
           <Property Name="EmailBW__c" Type="varchar" MaxLength="80" />
+          <Property Name="No_PDF_Cortesia__c" Type="bit" />
+          <Property Name="Intercompany_Code__c" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'BI_STG.dbo.FE_PDF_Arxivar_CHECK'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <EntityType Name="FE_PDF_Arxivar_CHECK">
+          <Key>
+            <PropertyRef Name="BillingDocument" />
+          </Key>
+          <Property Name="BillingDocument" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AccountingDocument" Type="varchar" MaxLength="10" />
+          <Property Name="FiscalYear" Type="varchar" MaxLength="4" />
+          <Property Name="BillingDocumentDate" Type="datetime" />
+          <Property Name="SoldToParty" Type="varchar" MaxLength="10" />
+          <Property Name="BillingDocumentType" Type="varchar" MaxLength="4" />
+          <Property Name="TotalNetAmount" Type="decimal" Precision="16" Scale="3" />
+          <Property Name="VATRegistrationCountry" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'BI_STG.dbo.FE_PDF_Arxivar_CHECK_FRIZZY'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <EntityType Name="FE_PDF_Arxivar_CHECK_FRIZZY">
+          <Key>
+            <PropertyRef Name="BillingDocument" />
+          </Key>
+          <Property Name="BillingDocument" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AccountingDocument" Type="varchar" MaxLength="10" />
+          <Property Name="FiscalYear" Type="varchar" MaxLength="4" />
+          <Property Name="BillingDocumentDate" Type="datetime" />
+          <Property Name="SoldToParty" Type="varchar" MaxLength="10" />
+          <Property Name="BillingDocumentType" Type="varchar" MaxLength="4" />
+          <Property Name="TotalNetAmount" Type="decimal" Precision="16" Scale="3" />
+          <Property Name="VATRegistrationCountry" Type="varchar" MaxLength="3" />
         </EntityType>
         <EntityContainer Name="BI_STGModelStoreContainer">
-          <EntitySet Name="SFDC_Anagrafica_Clienti" EntityType="Self.SFDC_Anagrafica_Clienti" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SFDC_Anagrafica_Clienti" EntityType="Self.SFDC_Anagrafica_Clienti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FE_PDF_Arxivar_CHECK" EntityType="Self.FE_PDF_Arxivar_CHECK" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[FE_PDF_Arxivar_CHECK].[BillingDocument] AS [BillingDocument], 
+[FE_PDF_Arxivar_CHECK].[AccountingDocument] AS [AccountingDocument], 
+[FE_PDF_Arxivar_CHECK].[FiscalYear] AS [FiscalYear], 
+[FE_PDF_Arxivar_CHECK].[BillingDocumentDate] AS [BillingDocumentDate], 
+[FE_PDF_Arxivar_CHECK].[SoldToParty] AS [SoldToParty], 
+[FE_PDF_Arxivar_CHECK].[BillingDocumentType] AS [BillingDocumentType], 
+[FE_PDF_Arxivar_CHECK].[TotalNetAmount] AS [TotalNetAmount], 
+[FE_PDF_Arxivar_CHECK].[VATRegistrationCountry] AS [VATRegistrationCountry]
+FROM [dbo].[FE_PDF_Arxivar_CHECK] AS [FE_PDF_Arxivar_CHECK]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FE_PDF_Arxivar_CHECK_FRIZZY" EntityType="Self.FE_PDF_Arxivar_CHECK_FRIZZY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[BillingDocument] AS [BillingDocument], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[AccountingDocument] AS [AccountingDocument], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[FiscalYear] AS [FiscalYear], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[BillingDocumentDate] AS [BillingDocumentDate], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[SoldToParty] AS [SoldToParty], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[BillingDocumentType] AS [BillingDocumentType], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[TotalNetAmount] AS [TotalNetAmount], 
+[FE_PDF_Arxivar_CHECK_FRIZZY].[VATRegistrationCountry] AS [VATRegistrationCountry]
+FROM [dbo].[FE_PDF_Arxivar_CHECK_FRIZZY] AS [FE_PDF_Arxivar_CHECK_FRIZZY]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BI_STGModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-        <EntityType Name="SFDC_Anagrafica_Clienti_STG">
+      <Schema Namespace="BI_STGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SFDC_Anagrafica_Clienti">
           <Key>
             <PropertyRef Name="AccountNumber__c" />
           </Key>
@@ -402,18 +457,48 @@
           <Property Name="TipoCliente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="cli" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="EmailBW__c" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="No_PDF_Cortesia__c" Type="Boolean" />
+          <Property Name="Intercompany_Code__c" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="BI_STGEntities">
-          <EntitySet Name="SFDC_Anagrafica_Clienti" EntityType="BI_STGModel.SFDC_Anagrafica_Clienti_STG" />
+        <EntityContainer Name="BI_STGEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SFDC_Anagrafica_Clienti" EntityType="Self.SFDC_Anagrafica_Clienti" />
+          <EntitySet Name="FE_PDF_Arxivar_CHECK" EntityType="BI_STGModel.FE_PDF_Arxivar_CHECK" />
+          <EntitySet Name="FE_PDF_Arxivar_CHECK_FRIZZY" EntityType="BI_STGModel.FE_PDF_Arxivar_CHECK_FRIZZY" />
         </EntityContainer>
+        <EntityType Name="FE_PDF_Arxivar_CHECK">
+          <Key>
+            <PropertyRef Name="BillingDocument" />
+          </Key>
+          <Property Name="BillingDocument" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocument" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FiscalYear" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="SoldToParty" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentType" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="TotalNetAmount" Type="Decimal" Precision="16" Scale="3" />
+          <Property Name="VATRegistrationCountry" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FE_PDF_Arxivar_CHECK_FRIZZY">
+          <Key>
+            <PropertyRef Name="BillingDocument" />
+          </Key>
+          <Property Name="BillingDocument" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingDocument" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FiscalYear" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="SoldToParty" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BillingDocumentType" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="TotalNetAmount" Type="Decimal" Precision="16" Scale="3" />
+          <Property Name="VATRegistrationCountry" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BI_STGModelStoreContainer" CdmEntityContainer="BI_STGEntities">
+        <EntityContainerMapping StorageEntityContainer="BI_STGModelStoreContainer" CdmEntityContainer="BI_STGEntities1">
           <EntitySetMapping Name="SFDC_Anagrafica_Clienti">
-            <EntityTypeMapping TypeName="BI_STGModel.SFDC_Anagrafica_Clienti_STG">
+            <EntityTypeMapping TypeName="BI_STGModel.SFDC_Anagrafica_Clienti">
               <MappingFragment StoreEntitySet="SFDC_Anagrafica_Clienti">
                 <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
                 <ScalarProperty Name="AccountNumber__c" ColumnName="AccountNumber__c" />
@@ -605,6 +690,36 @@
                 <ScalarProperty Name="TipoCliente" ColumnName="TipoCliente" />
                 <ScalarProperty Name="cli" ColumnName="cli" />
                 <ScalarProperty Name="EmailBW__c" ColumnName="EmailBW__c" />
+                <ScalarProperty Name="No_PDF_Cortesia__c" ColumnName="No_PDF_Cortesia__c" />
+                <ScalarProperty Name="Intercompany_Code__c" ColumnName="Intercompany_Code__c" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FE_PDF_Arxivar_CHECK">
+            <EntityTypeMapping TypeName="BI_STGModel.FE_PDF_Arxivar_CHECK">
+              <MappingFragment StoreEntitySet="FE_PDF_Arxivar_CHECK">
+                <ScalarProperty Name="VATRegistrationCountry" ColumnName="VATRegistrationCountry" />
+                <ScalarProperty Name="TotalNetAmount" ColumnName="TotalNetAmount" />
+                <ScalarProperty Name="BillingDocumentType" ColumnName="BillingDocumentType" />
+                <ScalarProperty Name="SoldToParty" ColumnName="SoldToParty" />
+                <ScalarProperty Name="BillingDocumentDate" ColumnName="BillingDocumentDate" />
+                <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+                <ScalarProperty Name="AccountingDocument" ColumnName="AccountingDocument" />
+                <ScalarProperty Name="BillingDocument" ColumnName="BillingDocument" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FE_PDF_Arxivar_CHECK_FRIZZY">
+            <EntityTypeMapping TypeName="BI_STGModel.FE_PDF_Arxivar_CHECK_FRIZZY">
+              <MappingFragment StoreEntitySet="FE_PDF_Arxivar_CHECK_FRIZZY">
+                <ScalarProperty Name="VATRegistrationCountry" ColumnName="VATRegistrationCountry" />
+                <ScalarProperty Name="TotalNetAmount" ColumnName="TotalNetAmount" />
+                <ScalarProperty Name="BillingDocumentType" ColumnName="BillingDocumentType" />
+                <ScalarProperty Name="SoldToParty" ColumnName="SoldToParty" />
+                <ScalarProperty Name="BillingDocumentDate" ColumnName="BillingDocumentDate" />
+                <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+                <ScalarProperty Name="AccountingDocument" ColumnName="AccountingDocument" />
+                <ScalarProperty Name="BillingDocument" ColumnName="BillingDocument" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -623,11 +738,12 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams />
+    <Diagrams></Diagrams>
   </Designer>
 </edmx:Edmx>
